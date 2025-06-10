@@ -39,7 +39,7 @@ const Home = () => {
         </div>
     </div>
             <div id="about" className="about d-flex flex-column align-items-center py-5 fs-4" dir='rtl'>
-                <h1 className='pb-3'style={{color:"#224375"}}>من نحن</h1>
+                <h1 className='pb-5'style={{color:"#224375"}}>من نحن</h1>
                 <p >مرحبًا بكم في <span style={{fontStyle:"italic",fontWeight:"bold"}}>نادي جامعة حلوان!</span></p>
                 <p >
                 حيث تلتقي الرياضة بالمتعة والتكنولوجيا! </p>
