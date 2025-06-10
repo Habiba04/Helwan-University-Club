@@ -21,23 +21,23 @@ const Footer = () => {
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/helwan.university.club?igsh=b3V2NzVuYXoxOXdu" className="instagram">
-                        <FontAwesomeIcon icon={faInstagram} />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://x.com/Helwan_HUC" className="x-twitter">
-                        <FontAwesomeIcon icon={faXTwitter} />
-                        </a>
-                    </li>
-                    <li>
                         <a href="https://www.threads.com/@helwan.university.club?hl=en" className="threads">
                         <FontAwesomeIcon icon={faThreads} />
                         </a>
                     </li>
                     <li>
+                        <a href="https://www.instagram.com/helwan.university.club?igsh=b3V2NzVuYXoxOXdu" className="instagram">
+                        <FontAwesomeIcon icon={faInstagram} />
+                        </a>
+                    </li>
+                    <li>
                         <a href="https://youtube.com/@helwanuniversityclub?si=-h78Iqw0O_XfxKD_" className="youtube">
                         <FontAwesomeIcon icon={faYoutube} />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://x.com/Helwan_HUC" className="x-twitter">
+                        <FontAwesomeIcon icon={faXTwitter} />
                         </a>
                     </li>
                 </ul>

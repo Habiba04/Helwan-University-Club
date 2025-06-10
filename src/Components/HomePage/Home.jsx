@@ -17,7 +17,7 @@ const Home = () => {
         <div className='home' id="home" >
             <div className="slideshow p-0 m-0 w-100">
         <div id="carouselExampleAutoplaying" className="carousel slide">
-            <div className="carousel-inner p-0 m-0 w-100">
+            <div className="carousel-inner p-0 m-0 w-100" style={{height:"85vh"}}>
             <div className="carousel-item active">
                 <img src="/assets/slide1.jpg" className="d-block w-100" alt="slide1" />
             </div>
