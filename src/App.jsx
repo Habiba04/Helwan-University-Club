@@ -8,7 +8,8 @@ import {
     NotFound,
     Register,
     Profile,
-    MembersList
+    MembersList,
+    StaffList
 } from "./componentPath";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                         <Route path={`${base}register`} element={<Register />} />
                         <Route path={`${base}profile/:id`} element={<Profile />} />
                         <Route path={`${base}members`} element={<MembersList />} />
+                        <Route path={`${base}staff`} element={<StaffList />} />
 
                         <Route path="*" element={<NotFound />} />
                     </Routes>

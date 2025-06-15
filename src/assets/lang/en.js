@@ -59,11 +59,12 @@ const enKeywords = {
         salaryProof: { label: 'Salary Proof' },
         status: { label: 'Status'},
         search: { label: 'Search', placeholder: 'Search by member ID...' },
+        staffSearch: { label: 'Staff Search', placeholder: 'Search by Staff Name...' },
     },
-    jobTypes: ['professor', 'retired professor', 'lecturer', 'retired lecturer', 'assistant lecturer', 'retired assistant lecturer', 'teaching assistant',   "member of teaching staff",'student',  'employee'],
+    jobTypes: ['Professor', 'Retired Professor', 'Lecturer', 'Retired Lecturer', 'Assistant Lecturer', 'Retired Assistant Lecturer', 'Teaching Assistant',   "Member of Teaching Staff",'Student',  'Employee'],
     nationality: ['egyptian', 'foreigner'],
-    membershipTypes: ['working member', 'dependent member', 'visitor member', 'affiliate member', 'branch member', 'seasonal member', 'foreigner seasonal member', 'sports member'],
-    socialStatus: ['single', 'married', 'divorced', 'widowed', 'separated', 'engaged'],
+    membershipTypes: ['Working Member', 'Dependent Member', 'Visitor Member', 'Affiliate Member', 'Branch Member', 'Seasonal Member', 'Foreigner Seasonal Member', 'Sports Member'],
+    socialStatus: ['Single', 'Married', 'Divorced', 'Widowed', 'Separated', 'Engaged'],
     gender: ['male', 'female'],
     userType: ['super admin', 'admin', 'member', 'staffMembership', 'staffSecurity'],
     subscriptionTypes: ['year', 'half year', 'month'],
@@ -71,7 +72,13 @@ const enKeywords = {
     subscriptionStatus: ['active', 'expired'],
     membersId: 'Member ID',
     actions: 'Actions',
-    view: 'View'
+    view: 'View',
+    staffType: 'Staff Type',
+    add: 'Add',
+    ModalAdd: 'Add Staff',
+    close: 'Close',
+    membershipStaff: 'Membership Staff',
+    securityStaff: 'Security Staff',
 }
 
 export default enKeywords
