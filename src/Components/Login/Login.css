@@ -1,0 +1,45 @@
+/* src/components/LoginForm.css */
+.login-container {
+    background-color: #D3E5ED;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    max-width: 450px;
+    margin: 2rem auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+.login-form[dir="ltr"] {
+    direction: ltr;
+    text-align: left;
+}
+
+.login-spinner {
+    color: #0d47a1 !important;
+}
+.login-form h2 {
+    color: #0d47a1;
+    font-weight: bold;
+}
+
+.login-form .btn-primary {
+    background-color: #0d47a1;
+    border: none;
+}
+
+.login-form a {
+    color: #0d47a1;
+    text-decoration: none;
+}
+
+.login-form a:hover {
+    text-decoration: underline;
+}
+
+button[class="btn btn-primary"]:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}

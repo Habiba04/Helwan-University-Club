@@ -3,7 +3,7 @@
 
 }
 
-.btn-outline-info{
+.my-btn-outline-info{
     --bs-btn-color: #224375;
     --bs-btn-border-color: #224375;
     --bs-btn-hover-color: #fff;
@@ -20,14 +20,46 @@
 }
 
 
-.navbar-nav .nav-link{
+.navbar-nav .nav-item .idealLink{
     color: #294977aa;
+    /* transition: border-bottom-width 0.3s ease-in-out; */
+}
+.navbar-nav .nav-item .idealLink span{
+    
+    width: 0;
 }
 
-.navbar-nav .nav-link.active{
+select{
     color: #224375;
+    text-align: center;
+    padding: 0px 5px;
+    border-width: 0px;
+    border-radius: 10px;
+}
+option{
+    color: #224375;
+    text-align: center;
+    padding: 0px;
+    border-width: 0px;
+    border-radius: 20px;
+}
+.navbar-nav .nav-item .activeLink{
+    color: #224375;
+    display: inline-flex;
+    flex-direction: column;
+}
+.navbar-nav .nav-item .activeLink span{
+    display: inline-block;
+    position: relative;
+    top:5px;
+    left: 0px;
+    width: 100%;
+    height: 3px;
+    border-radius: 30px;
+    background-color: #F49425;
+    transition: width 0.3s ease-in-out;
 }
 
-.navbar-nav .nav-link:hover{
+.navbar-nav .nav-item .idealLink:hover{
     color: #224375;
 }

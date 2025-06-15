@@ -1,22 +1,15 @@
-import React from 'react'
 import './Home.css'
-import { useEffect } from 'react';
 
 const Home = () => {
-    useEffect(() => {
-        const carouselElement = document.querySelector('#carouselExampleAutoplaying');
-        if (carouselElement) {
-            new window.bootstrap.Carousel(carouselElement, {
-                interval: 2000,
-                pause: false,
-                ride: 'carousel',
-            });
-            }
-        }, []);
+    
     return (
-        <div className='home' id="home" >
+        <div className='home' id="top" >
             <div className="slideshow p-0 m-0 w-100">
-        <div id="carouselExampleAutoplaying" className="carousel slide">
+                <div id="carouselExampleAutoplaying" className="carousel slide"
+                    data-bs-ride="carousel"
+                    data-bs-interval="2500"
+                    data-bs-pause="false"
+                >
             <div className="carousel-inner p-0 m-0 w-100" style={{height:"85vh"}}>
             <div className="carousel-item active">
                 <img src="/assets/slide1.jpg" className="d-block w-100" alt="slide1" />
