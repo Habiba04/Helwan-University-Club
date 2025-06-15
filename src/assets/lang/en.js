@@ -79,6 +79,13 @@ const enKeywords = {
     close: 'Close',
     membershipStaff: 'Membership Staff',
     securityStaff: 'Security Staff',
+    userID: 'User ID',
+    userName: 'User Name',
+    date: 'Date',
+    type: 'Type',
+    message: 'Message',
+    startDate: 'Start Date',
+    endDate: 'End Date',
 }
 
 export default enKeywords

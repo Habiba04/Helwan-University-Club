@@ -255,5 +255,128 @@
         "password": "ggggggg",
         "type": "membership"
         }
+    ],
+    "Logs": [
+        {
+            "id": 1,
+            "userId": "U001",
+            "userName": "Alice Smith",
+            "date": "2025-06-01",
+            "type": "added",
+            "message": "Added new patient record."
+        },
+        {
+            "id": 2,
+            "userId": "U002",
+            "userName": "Bob Johnson",
+            "date": "2025-06-01",
+            "type": "edited",
+            "message": "Updated appointment details."
+        },
+        {
+            "id": 3,
+            "userId": "U003",
+            "userName": "Carla Ruiz",
+            "date": "2025-06-02",
+            "type": "deleted",
+            "message": "Deleted outdated staff entry."
+        },
+        {
+            "id": 4,
+            "userId": "U004",
+            "userName": "David Lee",
+            "date": "2025-06-02",
+            "type": "error",
+            "message": "Failed to retrieve prescription data."
+        },
+        {
+            "id": 5,
+            "userId": "U005",
+            "userName": "Emily Davis",
+            "date": "2025-06-03",
+            "type": "added",
+            "message": "Created new admin account."
+        },
+        {
+            "id": 6,
+            "userId": "U001",
+            "userName": "Alice Smith",
+            "date": "2025-06-04",
+            "type": "edited",
+            "message": "Modified patient history notes."
+        },
+        {
+            "id": 7,
+            "userId": "U006",
+            "userName": "Frank Martin",
+            "date": "2025-06-04",
+            "type": "error",
+            "message": "Access denied on staff module."
+        },
+        {
+            "id": 8,
+            "userId": "U003",
+            "userName": "Carla Ruiz",
+            "date": "2025-06-05",
+            "type": "deleted",
+            "message": "Removed duplicate appointment entry."
+        },
+        {
+            "id": 9,
+            "userId": "U007",
+            "userName": "Grace Chen",
+            "date": "2025-06-05",
+            "type": "added",
+            "message": "Added new lab report to patient file."
+        },
+        {
+            "id": 10,
+            "userId": "U008",
+            "userName": "Henry Zhao",
+            "date": "2025-06-06",
+            "type": "edited",
+            "message": "Changed user role from Doctor to Admin."
+        },
+        {
+            "id": 11,
+            "userId": "U009",
+            "userName": "Isla Patel",
+            "date": "2025-06-06",
+            "type": "deleted",
+            "message": "Deleted unused prescription template."
+        },
+        {
+            "id": 12,
+            "userId": "U010",
+            "userName": "Jack Wilson",
+            "date": "2025-06-07",
+            "type": "error",
+            "message": "Timeout while syncing with server."
+        },
+        {
+            "id": 13,
+            "userId": "U002",
+            "userName": "Bob Johnson",
+            "date": "2025-06-07",
+            "type": "added",
+            "message": "Registered new doctor profile."
+        },
+        {
+            "id": 14,
+            "userId": "U004",
+            "userName": "David Lee",
+            "date": "2025-06-08",
+            "type": "edited",
+            "message": "Updated contact info for patient U023."
+        },
+        {
+            "id": 15,
+            "userId": "U005",
+            "userName": "Emily Davis",
+            "date": "2025-06-08",
+            "type": "error",
+            "message": "Failed login attempt detected."
+        }
     ]
+        
 }

@@ -79,6 +79,13 @@ const arKeywords = {
     close: 'اغلاق',
     membershipStaff: 'موظف إشتراكات',
     securityStaff: 'موظف أمن',
+    userID: 'رقم المستخدم',
+    userName: 'اسم المستخدم',
+    date: 'التاريخ',
+    type: 'النوع',
+    message: 'الرسالة',
+    startDate: 'من',
+    endDate: 'الى'
 };
 
 export default arKeywords
