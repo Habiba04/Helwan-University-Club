@@ -7,7 +7,8 @@ import {
     Login,
     NotFound,
     Register,
-    Profile
+    Profile,
+    MembersList
 } from "./componentPath";
 
 function App() {
@@ -18,9 +19,11 @@ function App() {
                     <Navbar />
                     <Routes>
                         <Route path={`${base}home`} element={<Home />} />
+                        <Route path={`${base}`} element={<Home />} />
                         <Route path={`${base}login`} element={<Login />} />
                         <Route path={`${base}register`} element={<Register />} />
                         <Route path={`${base}profile/:id`} element={<Profile />} />
+                        <Route path={`${base}members`} element={<MembersList />} />
 
                         <Route path="*" element={<NotFound />} />
                     </Routes>

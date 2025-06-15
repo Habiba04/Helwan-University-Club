@@ -57,17 +57,21 @@ const enKeywords = {
         ssnImage: { label: 'SSN Image' },
         medicalReport: { label: 'Medical Report' },
         salaryProof: { label: 'Salary Proof' },
+        status: { label: 'Status'},
+        search: { label: 'Search', placeholder: 'Search by member ID...' },
     },
-    jobTypes: ['professor', 'retired professor', 'leacturer', 'retired leacturer', 'assistant lecturer', 'retired assistant lecturer', 'teaching assistant',   "member of teaching staff",'student',  'employee'],
+    jobTypes: ['professor', 'retired professor', 'lecturer', 'retired lecturer', 'assistant lecturer', 'retired assistant lecturer', 'teaching assistant',   "member of teaching staff",'student',  'employee'],
     nationality: ['egyptian', 'foreigner'],
-    membershipTypes: ['working member', 'dependent member', 'visitor member', 'affiliate member', 'branch member', 'sessonal member', 'foreigner sessonal member', 'sports member'],
+    membershipTypes: ['working member', 'dependent member', 'visitor member', 'affiliate member', 'branch member', 'seasonal member', 'foreigner seasonal member', 'sports member'],
     socialStatus: ['single', 'married', 'divorced', 'widowed', 'separated', 'engaged'],
     gender: ['male', 'female'],
     userType: ['super admin', 'admin', 'member', 'staffMembership', 'staffSecurity'],
     subscriptionTypes: ['year', 'half year', 'month'],
     subscriptionModes: ['manual', 'auto'],
     subscriptionStatus: ['active', 'expired'],
-
+    membersId: 'Member ID',
+    actions: 'Actions',
+    view: 'View'
 }
 
 export default enKeywords
