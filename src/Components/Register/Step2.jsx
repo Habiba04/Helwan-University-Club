@@ -20,9 +20,9 @@ const Step2 = ({ back, data, onComplete }) => {
         Object.entries(files).forEach(([key, value]) => {
             formData.append(key, value);
         });
-        Object.entries(data).forEach(([key, value]) => {
-            formData.append(key, value);
-        });
+        // Object.entries(data).forEach(([key, value]) => {
+        //     formData.append(key, value);
+        // });
 
         const config = {
             onUploadProgress: (e) => {
@@ -41,20 +41,29 @@ const Step2 = ({ back, data, onComplete }) => {
 
     return (
         <div className="step-container" dir={lang[language].direction}>
-            <h3>{lang[language].createAccount}</h3>
-            <button className="btn btn-secondary mb-3" onClick={back}>
+            <h3 className="text-center">{lang[language].createAccount}</h3>
+            <h3>{lang[language].step} <span className="badge  fs-6" style={{ backgroundColor: "#224375" }}>2/2</span></h3>
+            <button className="btn btn-secondary mb-3 rounded-5" style={{ backgroundColor: "#224375" }}  onClick={back}>
                 <FontAwesomeIcon icon={faArrowLeft} /> {lang[language].back}
             </button>
 
             <div className="upload-grid">
                 {[
-                    { name: "personalImage", label: lang[language].fields.personalImage.label },
+                    { name: "personalImage", label: lang[language].fields.personalImage.label, hint:"4x6" },
                     { name: "ssnImage", label: lang[language].fields.ssnImage.label },
                     { name: "salaryProof", label: lang[language].fields.salaryProof.label },
                     { name: "medicalReport", label: lang[language].fields.medicalReport.label },
                 ].map((field) => (
-                    <div key={field.name} className="upload-box">
-                        <label htmlFor={field.name} className="form-label">{field.label}</label>
+                    <div key={field.name} className="upload-box  ">
+                        <div className="h-50 d-flex justify-content-center align-items-center">
+                            {files[field.name] ? (
+                                <img src={URL.createObjectURL(files[field.name])} alt={field.label}  width={"80%"} height={"100%"} className="mx-3 "/>
+                            ) : (
+                                <FontAwesomeIcon icon={faUpload} size="2x" className="mx-3 position-relative bottom-0" />
+                            )
+                            }
+                        </div>
+                        <label htmlFor={field.name} className="form-label py-2">{field.label} {field?.hint && <span className="text-muted">{field.hint}</span>}</label>
                         <input
                             type="file"
                             name={field.name}
@@ -65,7 +74,7 @@ const Step2 = ({ back, data, onComplete }) => {
                     </div>
                 ))}
             </div>
-            <div className="progress my-3">
+            <div className="progress my-3 ">
                 <div
                     className="progress-bar"
                     role="progressbar"
@@ -79,7 +88,7 @@ const Step2 = ({ back, data, onComplete }) => {
             </div>
 
 
-            <button className="btn btn-primary w-100" onClick={handleUpload}>
+            <button className="btn btn-primary w-100" style={{ backgroundColor: "#224375" }}  onClick={handleUpload}>
                 {lang[language].register}
             </button>
         </div>

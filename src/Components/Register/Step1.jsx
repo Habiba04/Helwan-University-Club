@@ -63,15 +63,7 @@ const Step1 = ({ next, initialData }) => {
             .oneOf([Yup.ref("password"), null], t.errors.confirmPassword)
             .required(t.errors.confirmPassword),
         job: Yup.string().required(t.errors.job),
-        // salary: Yup.mixed().when("job", {
-        //     is: (val) => val?.toLowerCase() !== "student",
-        //     then: Yup.number()
-        //         .typeError(t.errors.salary)
-        //         .required(t.errors.salary),
-        //     otherwise: Yup.number()
-        //         .typeError(t.errors.salary)
-        //         .notRequired(),
-        // }),
+        salary: Yup.number().typeError(t.errors.salary).required(),
         nationality: Yup.string().required(),
         subscriptionType: Yup.string().required(),
         membershipType: Yup.string().required(),
@@ -120,7 +112,8 @@ const Step1 = ({ next, initialData }) => {
 
     return (
         <div className="step-container" dir={dir}>
-            <h3>{t.createAccount}</h3>
+            <h2 className="text-center">{t.createAccount}</h2>
+            <h3>{t.step} <span className="badge  fs-6" style={{ backgroundColor: "#224375" }}>1/2</span></h3>
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
@@ -158,15 +151,15 @@ const Step1 = ({ next, initialData }) => {
                                 <ErrorMessage name="email" component="div" className="text-danger small" />
                             </div>
 
-                            <div className="col-md-6 mb-3">
+                            <div className="col-md-6 mb-3" onMouseEnter={()=> document.getElementById("password").type = "text"} onMouseLeave={()=> document.getElementById("password").type = "password"}>
                                 <label>{t.fields.password.label}</label>
-                                <Field name="password" type="password" className="form-control" placeholder="**********" />
+                                <Field name="password" type="password" className="form-control" placeholder="**********" id="password" />
                                 <ErrorMessage name="password" component="div" className="text-danger small" />
                             </div>
 
-                            <div className="col-md-6 mb-3">
+                            <div className="col-md-6 mb-3" onMouseEnter={() => document.getElementById("cpassword").type = "text"} onMouseLeave={() => document.getElementById("cpassword").type = "password"}>
                                 <label>{t.fields.confirmPassword.label}</label>
-                                <Field name="confirmPassword" type="password" className="form-control" placeholder="**********" />
+                                <Field name="confirmPassword" type="password" className="form-control" placeholder="**********" id="cpassword" />
                                 <ErrorMessage name="confirmPassword" component="div" className="text-danger small" />
                             </div>
 
@@ -189,15 +182,18 @@ const Step1 = ({ next, initialData }) => {
                                 <ErrorMessage name="job" component="div" className="text-danger small" />
                             </div>
 
-                            <div className="col-md-6 mb-3">
-                                <label>{t.fields.salary.label}</label>
-                                <Field
-                                    name="salary"
-                                    className="form-control"
-                                    disabled={dynamicFields.salaryDisabled}
-                                />
-                                <ErrorMessage name="salary" component="div" className="text-danger small" />
-                            </div>
+                            {dynamicFields.salaryDisabled ? null :
+                                (
+                                    <div className="col-md-6 mb-3">
+                                        <label>{t.fields.salary.label}</label>
+                                        <Field
+                                            name="salary"
+                                            className="form-control"
+                                            disabled={dynamicFields.salaryDisabled}
+                                        />
+                                        <ErrorMessage name="salary" component="div" className="text-danger small" />
+                                    </div>
+                            )}
 
                             <div className="col-md-6 mb-3">
                                 <label>{t.fields.nationality.label}</label>
@@ -246,7 +242,7 @@ const Step1 = ({ next, initialData }) => {
                             </div>
 
                             <div className="col-md-12 mt-3">
-                                <button className="btn btn-primary w-100" type="submit">
+                                <button className="btn btn-primary w-100" style={{ backgroundColor: "#224375" }} type="submit">
                                     {t.next}
                                 </button>
                             </div>

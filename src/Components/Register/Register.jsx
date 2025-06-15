@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "./Register.css";
 
 const Register = () => {
-    const [step, setStep] = useState(1);
+    const [step, setStep] = useState(2);
     const [formData, setFormData] = useState({});
     const navigate = useNavigate();
 
