@@ -57,16 +57,21 @@ const arKeywords = {
         ssnImage: { label: 'صورة إثبات الدخل' },
         medicalReport: { label: 'تقرير طبي' },
         salaryProof: { label: 'إثبات الراتب' },
+        status: { label: 'الحالة'},
+        search: { label: 'بحث', placeholder: 'بحث برقم العضوية...' },
     },
     jobTypes: ['استاذ', 'استاذ متفرغ', 'مدرس', 'مدرس متفرغ', 'مساعد مدرس', 'مساعد مدرس متفرغ', 'معيد', 'عضو تدريس', 'طالب', 'موظف'],
     nationality: ['مصري', 'غير مصري'],
     membershipTypes: ['العضوالعامل', 'العضوالتابع', 'العضوالزائر', 'العضوالمنتسب', 'العضوالفرع', 'العضوالموسمي', 'العضوالموسمي للأجانب', 'العضوالرياضي'],
     socialStatus: ['اغزب / عزباء', 'متزوج / ة', 'مطلق / ة', 'ارمل / ة', 'منفصل / ة', 'خاطب / ة'],
     gender: ['ذكر', 'انثى'],
-    userTypes: ['super admin', 'admin', 'member', 'staffMembership', "staffSecurity"],
+    userTypes: ['سوبر أدمن', 'أدمن', 'عضو', 'موظف إشتراكات', "موظف أمن"],
     subscriptionTypes: ['سنوي', 'نصف سنوي', 'شهري'],
     subscriptionModes: ['يدوي', 'نلقائي'],
     subscriptionStatus: ['فاعل', 'منتهي'],
+    membersId: 'رقم العضوية',
+    actions: 'تحكم',
+    view: 'عرض',
 };
 
 export default arKeywords

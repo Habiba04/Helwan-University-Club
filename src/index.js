@@ -11,6 +11,7 @@ import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import { BrowserRouter, } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageProvider.context';
 import ScrollToHashElement from './router/ScrollToHashElement.js';
+import { AuthProvider } from './context/AuthContext.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,7 +19,9 @@ root.render(
         <LanguageProvider>
             <BrowserRouter>
                 <ScrollToHashElement />
-                <App />
+                <AuthProvider>
+                    <App />
+                </AuthProvider>
             </BrowserRouter>
         </LanguageProvider>
     </React.StrictMode>

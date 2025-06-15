@@ -8,4 +8,6 @@ import Login from './Components/Login/Login.jsx';
 import Register from './Components/Register/Register.jsx';
 import Profile from './Components/Profile/Profile.jsx';
 
-export { Home, Footer, Navbar, Login, NotFound, Register, Profile };
+import MembersList from './Components/Tables/MembersList.jsx';
+
+export { Home, Footer, Navbar, Login, NotFound, Register, Profile, MembersList };
