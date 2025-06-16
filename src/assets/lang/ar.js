@@ -85,7 +85,12 @@ const arKeywords = {
     type: 'النوع',
     message: 'الرسالة',
     startDate: 'من',
-    endDate: 'الى'
+    endDate: 'الى',
+    billID: 'رقم الإيصال',
+    billAmount: 'قيمة الإيصال',
+    billType: 'نوع الإيصال',
+    billStatus: 'حالة الإيصال',
+    currency: 'ج',
 };
 
 export default arKeywords

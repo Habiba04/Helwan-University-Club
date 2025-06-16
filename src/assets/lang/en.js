@@ -86,6 +86,11 @@ const enKeywords = {
     message: 'Message',
     startDate: 'Start Date',
     endDate: 'End Date',
+    billID: 'Bill ID',
+    billAmount: 'Bill Amount',
+    billStatus: 'Bill Status',
+    billType: 'Bill Type',
+    currency: 'EGP'
 }
 
 export default enKeywords

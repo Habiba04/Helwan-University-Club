@@ -10,7 +10,8 @@ import {
     Profile,
     MembersList,
     StaffList,
-    LogsList
+    LogsList,
+    BillingList
 } from "./componentPath";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
                         <Route path={`${base}members`} element={<MembersList />} />
                         <Route path={`${base}staff`} element={<StaffList />} />
                         <Route path={`${base}logs`} element={<LogsList />} />
+                        <Route path={`${base}member/billing`} element={<BillingList />} />
 
                         <Route path="*" element={<NotFound />} />
                     </Routes>

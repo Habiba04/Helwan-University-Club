@@ -6,9 +6,9 @@ import lang from '../../assets/lang/language';
 import { Collapse } from 'bootstrap/dist/js/bootstrap.min'; 
 const Navbar = () => {
     // const { isLoggedIn, role } = JSON.parse(localStorage.getItem('toekn'));
-    const { isLoggedIn, role } = { isLoggedIn: true, role: 'admin' };
+    // const { isLoggedIn, role } = { isLoggedIn: true, role: 'admin' };
     // const { isLoggedIn, role } = { isLoggedIn: true, role: 'staffMembership' };
-    // const { isLoggedIn, role } = { isLoggedIn: true, role: 'member' };
+    const { isLoggedIn, role } = { isLoggedIn: true, role: 'member' };
     const navigate = useNavigate();
     let {language, changeLanguage} = useContext(LanguageContext);
 
@@ -82,7 +82,7 @@ const Navbar = () => {
                                 <>
                                     <li className="nav-item" onClick={collapseNavbar}>
                                         <NavLink className={({ isActive }) => isActive ? "nav-link activeLink" : "nav-link idealLink"}
-                                            to="/member/bailling">
+                                            to="/member/billing">
                                             {lang[language].billingLink}
                                             <span />
                                         </NavLink>

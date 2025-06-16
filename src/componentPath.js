@@ -11,5 +11,6 @@ import Profile from './Components/Profile/Profile.jsx';
 import MembersList from './Components/Tables/MembersList.jsx';
 import StaffList from './Components/Tables/StaffList.jsx';
 import LogsList from './Components/Tables/LogsList.jsx';
+import BillingList from './Components/Tables/BillingList.jsx';
 
-export { Home, Footer, Navbar, Login, NotFound, Register, Profile, MembersList, StaffList, LogsList };
+export { Home, Footer, Navbar, Login, NotFound, Register, Profile, MembersList, StaffList, LogsList, BillingList };

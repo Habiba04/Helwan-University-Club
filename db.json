@@ -377,6 +377,128 @@
             "type": "error",
             "message": "Failed login attempt detected."
         }
+    ],
+    "Billing": [
+        {
+        "id": 1,
+        "billID": "B001",
+        "date": "2025-06-01",
+        "type": "استمارات اشتراك",
+        "amount": 150.0,
+        "status": "paid"
+        },
+        {
+        "id": 2,
+        "billID": "B002",
+        "date": "none",
+        "type": "اشتراك اول مرة",
+        "amount": 300.0,
+        "status": "unpaid"
+        },
+        {
+        "id": 3,
+        "billID": "B003",
+        "date": "2025-05-28",
+        "type": "تجديد اشتراك",
+        "amount": 200.0,
+        "status": "paid"
+        },
+        {
+        "id": 4,
+        "billID": "B004",
+        "date": "none",
+        "type": "تجديد اشتراك تابعين",
+        "amount": 180.0,
+        "status": "unpaid"
+        },
+        {
+        "id": 5,
+        "billID": "B005",
+        "date": "2025-05-15",
+        "type": "استمارات اشتراك",
+        "amount": 150.0,
+        "status": "paid"
+        },
+        {
+        "id": 6,
+        "billID": "B006",
+        "date": "none",
+        "type": "اشتراك اول مرة",
+        "amount": 300.0,
+        "status": "unpaid"
+        },
+        {
+        "id": 7,
+        "billID": "B007",
+        "date": "2025-04-30",
+        "type": "تجديد اشتراك",
+        "amount": 200.0,
+        "status": "paid"
+        },
+        {
+        "id": 8,
+        "billID": "B008",
+        "date": "2025-06-10",
+        "type": "تجديد اشتراك تابعين",
+        "amount": 180.0,
+        "status": "paid"
+        },
+        {
+        "id": 9,
+        "billID": "B009",
+        "date": "none",
+        "type": "استمارات اشتراك",
+        "amount": 150.0,
+        "status": "unpaid"
+        },
+        {
+        "id": 10,
+        "billID": "B010",
+        "date": "2025-05-20",
+        "type": "اشتراك اول مرة",
+        "amount": 300.0,
+        "status": "paid"
+        },
+        {
+        "id": 11,
+        "billID": "B011",
+        "date": "none",
+        "type": "تجديد اشتراك",
+        "amount": 200.0,
+        "status": "unpaid"
+        },
+        {
+        "id": 12,
+        "billID": "B012",
+        "date": "2025-04-25",
+        "type": "تجديد اشتراك تابعين",
+        "amount": 180.0,
+        "status": "paid"
+        },
+        {
+        "id": 13,
+        "billID": "B013",
+        "date": "none",
+        "type": "استمارات اشتراك",
+        "amount": 150.0,
+        "status": "unpaid"
+        },
+        {
+        "id": 14,
+        "billID": "B014",
+        "date": "2025-06-05",
+        "type": "اشتراك اول مرة",
+        "amount": 300.0,
+        "status": "paid"
+        },
+        {
+        "id": 15,
+        "billID": "B015",
+        "date": "none",
+        "type": "تجديد اشتراك تابعين",
+        "amount": 180.0,
+        "status": "unpaid"
+        }
     ]
-        
+
 }
