@@ -91,6 +91,7 @@ const arKeywords = {
     billType: 'نوع الإيصال',
     billStatus: 'حالة الإيصال',
     currency: 'ج',
+    image: 'صورة',
 };
 
 export default arKeywords

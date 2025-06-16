@@ -11,7 +11,8 @@ import {
     MembersList,
     StaffList,
     LogsList,
-    BillingList
+    BillingList,
+    ProfileList
 } from "./componentPath";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
                         <Route path={`${base}staff`} element={<StaffList />} />
                         <Route path={`${base}logs`} element={<LogsList />} />
                         <Route path={`${base}member/billing`} element={<BillingList />} />
+                        <Route path={`${base}member/cards`} element={<ProfileList />} />
 
                         <Route path="*" element={<NotFound />} />
                     </Routes>

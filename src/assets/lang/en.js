@@ -90,7 +90,8 @@ const enKeywords = {
     billAmount: 'Bill Amount',
     billStatus: 'Bill Status',
     billType: 'Bill Type',
-    currency: 'EGP'
+    currency: 'EGP',
+    image: 'Image',
 }
 
 export default enKeywords
