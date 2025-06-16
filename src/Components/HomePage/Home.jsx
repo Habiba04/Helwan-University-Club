@@ -88,7 +88,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="features d-flex flex-column align-items-center py-5 fs-4" dir='rtl'>
-                <h1 className='pb-5'style={{color:"#224375"}}>أنشطة النادي</h1>
+                <h1 className='pb-5'style={{color:"#224375"}}>ميزات النادي</h1>
                 <div className='container'>
                 <div className="card mb-3 border-0" style={{maxWidth: "100%"}}>
                     <div className="row g-0">

@@ -1,124 +1,625 @@
 {
-"Members": [
+    "Members": [
+        {
+        "id": 1,
+        "memberId": "101",
+        "name": "أحمد علي",
+        "ssn": "12345678901234",
+        "job": "1",
+        "status": "تم الدفع"
+        },
+        {
+        "id": 2,
+        "memberId": "102",
+        "name": "فاطمة محمد",
+        "ssn": "98765432109876",
+        "job": "2",
+        "status": "لم يدفع الإشتراك"
+        },
+        {
+        "id": 3,
+        "memberId": "103",
+        "name": "محمد عبد الله",
+        "ssn": "11112222333344",
+        "job": "3",
+        "status": "لم يدفع الإستمارة"
+        },
+        {
+        "id": 4,
+        "memberId": "104",
+        "name": "ليلى خالد",
+        "ssn": "44445555666677",
+        "job": "4",
+        "status": "تم الدفع"
+        },
+        {
+        "id": 5,
+        "memberId": "105",
+        "name": "كريم محمود",
+        "ssn": "77778888999900",
+        "job": "5",
+        "status": "تم الدفع"
+        },
+        {
+        "id": 6,
+        "memberId": "106",
+        "name": "سارة ياسر",
+        "ssn": "22223333444455",
+        "job": "6",
+        "status": "لم يدفع الإشتراك"
+        },
+        {
+        "id": 7,
+        "memberId": "107",
+        "name": "عمرو طارق",
+        "ssn": "66667777888899",
+        "job": "7",
+        "status": "لم يدفع الإستمارة"
+        },
+        {
+        "id": 8,
+        "memberId": "108",
+        "name": "يمنى صلاح",
+        "ssn": "99990000111122",
+        "job": "8",
+        "status": "تم الدفع"
+        },
+        {
+        "id": 9,
+        "memberId": "109",
+        "name": "خالد سامي",
+        "ssn": "33334444555566",
+        "job": "9",
+        "status": "لم يدفع الإستمارة"
+        },
+        {
+        "id": 10,
+        "memberId": "110",
+        "name": "دينا حسن",
+        "ssn": "55556666777788",
+        "job": "1",
+        "status": "لم يدفع الإشتراك"
+        },
+        {
+        "id": 11,
+        "memberId": "111",
+        "name": "مروان نادر",
+        "ssn": "88889999000011",
+        "job": "2",
+        "status": "تم الدفع"
+        },
+        {
+        "id": 12,
+        "memberId": "112",
+        "name": "نورا عبد الرحمن",
+        "ssn": "22221111000099",
+        "job": "3",
+        "status": "لم يدفع الإستمارة"
+        },
+        {
+        "id": 13,
+        "memberId": "113",
+        "name": "ياسر محمد",
+        "ssn": "44443333222211",
+        "job": "4",
+        "status": "تم الدفع"
+        },
+        {
+        "id": 14,
+        "memberId": "114",
+        "name": "هند محمود",
+        "ssn": "11119999888877",
+        "job": "5",
+        "status": "لم يدفع الإشتراك"
+        },
+        {
+        "id": 15,
+        "memberId": "115",
+        "name": "زياد هاني",
+        "ssn": "33332222111100",
+        "job": "6",
+        "status": "تم الدفع"
+        }
+    ],
+    "Staff": [
+        {
+        "id": 1,
+        "name": "أحمد عبد الرحمن",
+        "email": "ahmed@company.com",
+        "password": "123456",
+        "type": "membership"
+        },
+        {
+        "id": 2,
+        "name": "منى يوسف",
+        "email": "mona@company.com",
+        "password": "pass123",
+        "type": "security"
+        },
+        {
+        "id": 3,
+        "name": "سعيد محمود",
+        "email": "saeed@company.com",
+        "password": "saeed2024",
+        "type": "membership"
+        },
+        {
+        "id": 4,
+        "name": "هالة حسن",
+        "email": "hala@company.com",
+        "password": "hala_pass",
+        "type": "security"
+        },
+        {
+        "id": 5,
+        "name": "يوسف جمال",
+        "email": "youssef@company.com",
+        "password": "y123456",
+        "type": "membership"
+        },
+        {
+        "id": 6,
+        "name": "رنا مصطفى",
+        "email": "rana@company.com",
+        "password": "rana321",
+        "type": "security"
+        },
+        {
+        "id": 7,
+        "name": "عمرو نبيل",
+        "email": "amr@company.com",
+        "password": "amrpass",
+        "type": "membership"
+        },
+        {
+        "id": 8,
+        "name": "ليلى أحمد",
+        "email": "laila@company.com",
+        "password": "laila987",
+        "type": "security"
+        },
+        {
+        "id": 9,
+        "name": "محمود سالم",
+        "email": "mahmoud@company.com",
+        "password": "m1234567",
+        "type": "membership"
+        },
+        {
+        "id": 10,
+        "name": "نهى سمير",
+        "email": "noha@company.com",
+        "password": "noha321",
+        "type": "security"
+        },
+        {
+        "id": 11,
+        "name": "كريم فتحي",
+        "email": "karim@company.com",
+        "password": "karimpass",
+        "type": "membership"
+        },
+        {
+        "id": 12,
+        "name": "إيمان رضا",
+        "email": "eman@company.com",
+        "password": "eman1234",
+        "type": "security"
+        },
+        {
+        "id": 13,
+        "name": "خالد عادل",
+        "email": "khaled@company.com",
+        "password": "khaled789",
+        "type": "membership"
+        },
+        {
+        "id": 14,
+        "name": "سمر عبد الله",
+        "email": "samar@company.com",
+        "password": "samarpass",
+        "type": "security"
+        },
+        {
+        "id": 15,
+        "name": "طارق إبراهيم",
+        "email": "tareq@company.com",
+        "password": "tareq2024",
+        "type": "membership"
+        },
+        {
+        "id": "d123",
+        "name": "habiba mahmoud elshaer",
+        "email": "habiba@mail.com",
+        "password": "hjhdkkih",
+        "type": "membership"
+        },
+        {
+        "id": "8954",
+        "name": "حبيبلة الشاعر",
+        "email": "smth@mail.com",
+        "password": "dhhygfye",
+        "type": "security"
+        },
+        {
+        "id": "5130",
+        "name": "fffff",
+        "email": "fffffffff",
+        "password": "fffffffff",
+        "type": "membership"
+        },
+        {
+        "id": "17d5",
+        "name": "gggggg",
+        "email": "gggggg",
+        "password": "ggggggg",
+        "type": "membership"
+        }
+    ],
+    "Logs": [
+        {
+            "id": 1,
+            "userId": "U001",
+            "userName": "Alice Smith",
+            "date": "2025-06-01",
+            "type": "added",
+            "message": "Added new patient record."
+        },
+        {
+            "id": 2,
+            "userId": "U002",
+            "userName": "Bob Johnson",
+            "date": "2025-06-01",
+            "type": "edited",
+            "message": "Updated appointment details."
+        },
+        {
+            "id": 3,
+            "userId": "U003",
+            "userName": "Carla Ruiz",
+            "date": "2025-06-02",
+            "type": "deleted",
+            "message": "Deleted outdated staff entry."
+        },
+        {
+            "id": 4,
+            "userId": "U004",
+            "userName": "David Lee",
+            "date": "2025-06-02",
+            "type": "error",
+            "message": "Failed to retrieve prescription data."
+        },
+        {
+            "id": 5,
+            "userId": "U005",
+            "userName": "Emily Davis",
+            "date": "2025-06-03",
+            "type": "added",
+            "message": "Created new admin account."
+        },
+        {
+            "id": 6,
+            "userId": "U001",
+            "userName": "Alice Smith",
+            "date": "2025-06-04",
+            "type": "edited",
+            "message": "Modified patient history notes."
+        },
+        {
+            "id": 7,
+            "userId": "U006",
+            "userName": "Frank Martin",
+            "date": "2025-06-04",
+            "type": "error",
+            "message": "Access denied on staff module."
+        },
+        {
+            "id": 8,
+            "userId": "U003",
+            "userName": "Carla Ruiz",
+            "date": "2025-06-05",
+            "type": "deleted",
+            "message": "Removed duplicate appointment entry."
+        },
+        {
+            "id": 9,
+            "userId": "U007",
+            "userName": "Grace Chen",
+            "date": "2025-06-05",
+            "type": "added",
+            "message": "Added new lab report to patient file."
+        },
+        {
+            "id": 10,
+            "userId": "U008",
+            "userName": "Henry Zhao",
+            "date": "2025-06-06",
+            "type": "edited",
+            "message": "Changed user role from Doctor to Admin."
+        },
+        {
+            "id": 11,
+            "userId": "U009",
+            "userName": "Isla Patel",
+            "date": "2025-06-06",
+            "type": "deleted",
+            "message": "Deleted unused prescription template."
+        },
+        {
+            "id": 12,
+            "userId": "U010",
+            "userName": "Jack Wilson",
+            "date": "2025-06-07",
+            "type": "error",
+            "message": "Timeout while syncing with server."
+        },
+        {
+            "id": 13,
+            "userId": "U002",
+            "userName": "Bob Johnson",
+            "date": "2025-06-07",
+            "type": "added",
+            "message": "Registered new doctor profile."
+        },
+        {
+            "id": 14,
+            "userId": "U004",
+            "userName": "David Lee",
+            "date": "2025-06-08",
+            "type": "edited",
+            "message": "Updated contact info for patient U023."
+        },
+        {
+            "id": 15,
+            "userId": "U005",
+            "userName": "Emily Davis",
+            "date": "2025-06-08",
+            "type": "error",
+            "message": "Failed login attempt detected."
+        }
+    ],
+    "Billing": [
+        {
+        "id": 1,
+        "billID": "B001",
+        "date": "2025-06-01",
+        "type": "استمارات اشتراك",
+        "amount": 150.0,
+        "status": "paid"
+        },
+        {
+        "id": 2,
+        "billID": "B002",
+        "date": "none",
+        "type": "اشتراك اول مرة",
+        "amount": 300.0,
+        "status": "unpaid"
+        },
+        {
+        "id": 3,
+        "billID": "B003",
+        "date": "2025-05-28",
+        "type": "تجديد اشتراك",
+        "amount": 200.0,
+        "status": "paid"
+        },
+        {
+        "id": 4,
+        "billID": "B004",
+        "date": "none",
+        "type": "تجديد اشتراك تابعين",
+        "amount": 180.0,
+        "status": "unpaid"
+        },
+        {
+        "id": 5,
+        "billID": "B005",
+        "date": "2025-05-15",
+        "type": "استمارات اشتراك",
+        "amount": 150.0,
+        "status": "paid"
+        },
+        {
+        "id": 6,
+        "billID": "B006",
+        "date": "none",
+        "type": "اشتراك اول مرة",
+        "amount": 300.0,
+        "status": "unpaid"
+        },
+        {
+        "id": 7,
+        "billID": "B007",
+        "date": "2025-04-30",
+        "type": "تجديد اشتراك",
+        "amount": 200.0,
+        "status": "paid"
+        },
+        {
+        "id": 8,
+        "billID": "B008",
+        "date": "2025-06-10",
+        "type": "تجديد اشتراك تابعين",
+        "amount": 180.0,
+        "status": "paid"
+        },
+        {
+        "id": 9,
+        "billID": "B009",
+        "date": "none",
+        "type": "استمارات اشتراك",
+        "amount": 150.0,
+        "status": "unpaid"
+        },
+        {
+        "id": 10,
+        "billID": "B010",
+        "date": "2025-05-20",
+        "type": "اشتراك اول مرة",
+        "amount": 300.0,
+        "status": "paid"
+        },
+        {
+        "id": 11,
+        "billID": "B011",
+        "date": "none",
+        "type": "تجديد اشتراك",
+        "amount": 200.0,
+        "status": "unpaid"
+        },
+        {
+        "id": 12,
+        "billID": "B012",
+        "date": "2025-04-25",
+        "type": "تجديد اشتراك تابعين",
+        "amount": 180.0,
+        "status": "paid"
+        },
+        {
+        "id": 13,
+        "billID": "B013",
+        "date": "none",
+        "type": "استمارات اشتراك",
+        "amount": 150.0,
+        "status": "unpaid"
+        },
+        {
+        "id": 14,
+        "billID": "B014",
+        "date": "2025-06-05",
+        "type": "اشتراك اول مرة",
+        "amount": 300.0,
+        "status": "paid"
+        },
+        {
+        "id": 15,
+        "billID": "B015",
+        "date": "none",
+        "type": "تجديد اشتراك تابعين",
+        "amount": 180.0,
+        "status": "unpaid"
+        }
+    ],
+    "Profiles": [
     {
-    "id": 1,
-    "memberId": "101",
-    "name": "أحمد علي",
-    "ssn": "12345678901234",
-    "job": "1",
-    "status": "تم الدفع"
-    },
-    {
-    "id": 2,
-    "memberId": "102",
-    "name": "فاطمة محمد",
-    "ssn": "98765432109876",
-    "job": "2",
-    "status": "لم يدفع الإشتراك"
-    },
-    {
-    "id": 3,
-    "memberId": "103",
-    "name": "محمد عبد الله",
-    "ssn": "11112222333344",
-    "job": "3",
-    "status": "لم يدفع الإستمارة"
-    },
-    {
-    "id": 4,
-    "memberId": "104",
-    "name": "ليلى خالد",
-    "ssn": "44445555666677",
-    "job": "4",
-    "status": "تم الدفع"
-    },
-    {
-    "id": 5,
-    "memberId": "105",
-    "name": "كريم محمود",
-    "ssn": "77778888999900",
-    "job": "5",
-    "status": "تم الدفع"
-    },
-    {
-    "id": 6,
-    "memberId": "106",
-    "name": "سارة ياسر",
-    "ssn": "22223333444455",
-    "job": "6",
-    "status": "لم يدفع الإشتراك"
-    },
-    {
-    "id": 7,
-    "memberId": "107",
-    "name": "عمرو طارق",
-    "ssn": "66667777888899",
-    "job": "7",
-    "status": "لم يدفع الإستمارة"
-    },
-    {
-    "id": 8,
-    "memberId": "108",
-    "name": "يمنى صلاح",
-    "ssn": "99990000111122",
-    "job": "8",
-    "status": "تم الدفع"
-    },
-    {
-    "id": 9,
-    "memberId": "109",
-    "name": "خالد سامي",
-    "ssn": "33334444555566",
-    "job": "9",
-    "status": "لم يدفع الإستمارة"
-    },
-    {
-    "id": 10,
-    "memberId": "110",
-    "name": "دينا حسن",
-    "ssn": "55556666777788",
-    "job": "1",
-    "status": "لم يدفع الإشتراك"
-    },
-    {
-    "id": 11,
-    "memberId": "111",
-    "name": "مروان نادر",
-    "ssn": "88889999000011",
-    "job": "2",
-    "status": "تم الدفع"
-    },
-    {
-    "id": 12,
-    "memberId": "112",
-    "name": "نورا عبد الرحمن",
-    "ssn": "22221111000099",
-    "job": "3",
-    "status": "لم يدفع الإستمارة"
-    },
-    {
-    "id": 13,
-    "memberId": "113",
-    "name": "ياسر محمد",
-    "ssn": "44443333222211",
-    "job": "4",
-    "status": "تم الدفع"
-    },
-    {
-    "id": 14,
-    "memberId": "114",
-    "name": "هند محمود",
-    "ssn": "11119999888877",
-    "job": "5",
-    "status": "لم يدفع الإشتراك"
-    },
-    {
-    "id": 15,
-    "memberId": "115",
-    "name": "زياد هاني",
-    "ssn": "33332222111100",
-    "job": "6",
-    "status": "تم الدفع"
-    }
-]
+        "id": 1,
+        "img": "🧑",
+        "memberid": "M001",
+        "name": "أحمد علي",
+        "type": "عامل",
+        "status": "تم التجديد"
+        },
+        {
+        "id": 2,
+        "img": "👤",
+        "memberid": "M002",
+        "name": "منى حسن",
+        "type": "زائر",
+        "status": "لم يجدد"
+        },
+        {
+        "id": 3,
+        "img": "🧑",
+        "memberid": "M003",
+        "name": "خالد محمد",
+        "type": "تابع",
+        "status": "تم التجديد"
+        },
+        {
+        "id": 4,
+        "img": "👤",
+        "memberid": "M004",
+        "name": "سارة إبراهيم",
+        "type": "عامل",
+        "status": "لم يجدد"
+        },
+        {
+        "id": 5,
+        "img": "🧑",
+        "memberid": "M005",
+        "name": "ياسر محمود",
+        "type": "زائر",
+        "status": "تم التجديد"
+        },
+        {
+        "id": 6,
+        "img": "👤",
+        "memberid": "M006",
+        "name": "ليلى أحمد",
+        "type": "تابع",
+        "status": "لم يجدد"
+        },
+        {
+        "id": 7,
+        "img": "🧑",
+        "memberid": "M007",
+        "name": "مصطفى فؤاد",
+        "type": "عامل",
+        "status": "تم التجديد"
+        },
+        {
+        "id": 8,
+        "img": "👤",
+        "memberid": "M008",
+        "name": "نجلاء مراد",
+        "type": "زائر",
+        "status": "لم يجدد"
+        },
+        {
+        "id": 9,
+        "img": "🧑",
+        "memberid": "M009",
+        "name": "رامي يوسف",
+        "type": "تابع",
+        "status": "تم التجديد"
+        },
+        {
+        "id": 10,
+        "img": "👤",
+        "memberid": "M010",
+        "name": "هالة صلاح",
+        "type": "عامل",
+        "status": "لم يجدد"
+        },
+        {
+        "id": 11,
+        "img": "🧑",
+        "memberid": "M011",
+        "name": "سامي حسن",
+        "type": "زائر",
+        "status": "تم التجديد"
+        },
+        {
+        "id": 12,
+        "img": "👤",
+        "memberid": "M012",
+        "name": "سندس عبد الله",
+        "type": "تابع",
+        "status": "لم يجدد"
+        },
+        {
+        "id": 13,
+        "img": "🧑",
+        "memberid": "M013",
+        "name": "هشام كمال",
+        "type": "عامل",
+        "status": "تم التجديد"
+        },
+        {
+        "id": 14,
+        "img": "👤",
+        "memberid": "M014",
+        "name": "داليا حسين",
+        "type": "زائر",
+        "status": "لم يجدد"
+        },
+        {
+        "id": 15,
+        "img": "🧑",
+        "memberid": "M015",
+        "name": "خديجة عمرو",
+        "type": "تابع",
+        "status": "تم التجديد"
+        }
+    ]
 }

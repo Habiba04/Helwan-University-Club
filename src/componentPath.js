@@ -9,5 +9,9 @@ import Register from './Components/Register/Register.jsx';
 import Profile from './Components/Profile/Profile.jsx';
 
 import MembersList from './Components/Tables/MembersList.jsx';
+import StaffList from './Components/Tables/StaffList.jsx';
+import LogsList from './Components/Tables/LogsList.jsx';
+import BillingList from './Components/Tables/BillingList.jsx';
+import ProfileList from './Components/Tables/ProfileList.jsx';
 
-export { Home, Footer, Navbar, Login, NotFound, Register, Profile, MembersList };
+export { Home, Footer, Navbar, Login, NotFound, Register, Profile, MembersList, StaffList, LogsList, BillingList, ProfileList };
