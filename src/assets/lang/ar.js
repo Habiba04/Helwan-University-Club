@@ -59,6 +59,7 @@ const arKeywords = {
         salaryProof: { label: 'إثبات الراتب' },
         status: { label: 'الحالة'},
         search: { label: 'بحث', placeholder: 'بحث برقم العضوية...' },
+        gender: { label: 'الجنس', placeholder: '' },
     },
     jobTypes: ['استاذ', 'استاذ متفرغ', 'مدرس', 'مدرس متفرغ', 'مساعد مدرس', 'مساعد مدرس متفرغ', 'معيد', 'عضو تدريس', 'طالب', 'موظف'],
     nationality: ['مصري', 'غير مصري'],

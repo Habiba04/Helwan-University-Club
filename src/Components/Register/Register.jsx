@@ -5,19 +5,20 @@ import { useNavigate } from "react-router-dom";
 import "./Register.css";
 
 const Register = () => {
-    const [step, setStep] = useState(2);
+    const [step, setStep] = useState(1);
     const [formData, setFormData] = useState({});
     const navigate = useNavigate();
 
     const next = (data) => {
         setFormData({ ...formData, ...data });
+        console.log(formData);
         setStep(2);
     };
 
     const back = () => setStep(1);
 
     const handleComplete = () => {
-        navigate("/billing");
+        navigate("/profile/0");
     };
 
     return (

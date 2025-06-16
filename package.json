@@ -13,9 +13,10 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.10.0",
+    "axios": "^1.9.0",
     "bootstrap": "^5.3.6",
     "formik": "^2.4.6",
+    "joi": "^17.13.3",
     "jquery": "^3.7.1",
     "jwt-decode": "^4.0.0",
     "react": "^19.1.0",
@@ -32,8 +33,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "react-scripts start",
-    "server": "json-server --watch db.json --port 3000"
+    "server": "json-server --watch db.json --port 7183"
   },
   "eslintConfig": {
     "extends": [

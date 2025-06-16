@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { useNavigate } from 'react-router-dom';
-import 'react-toastify/dist/ReactToastify.css';
+// import 'react-toastify/dist/ReactToastify.css';
 import './Tables.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
@@ -34,7 +34,7 @@ const MembersList = () => {
     const fetchData = async () => {
         try {
             //to be replaced with instance
-            const res = await axios.get(`http://localhost:3000/Members`);
+            const res = await axios.get(`http://localhost:7183/Members`);
             setMembers(res.data);
         } catch (error) {
             console.error("Error fetching data:", error);

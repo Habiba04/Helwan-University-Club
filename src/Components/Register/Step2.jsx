@@ -32,7 +32,9 @@ const Step2 = ({ back, data, onComplete }) => {
         };
 
         try {
+            console.log(formData)
             await api.post("/account/register/", formData, config);
+
             onComplete();
         } catch (error) {
             console.error("Upload failed", error);

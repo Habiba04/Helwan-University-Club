@@ -59,6 +59,7 @@ const enKeywords = {
         salaryProof: { label: 'Salary Proof' },
         status: { label: 'Status'},
         search: { label: 'Search', placeholder: 'Search by member ID...' },
+        gender: { label: 'Gender', placeholder: '' },
     },
     jobTypes: ['professor', 'retired professor', 'lecturer', 'retired lecturer', 'assistant lecturer', 'retired assistant lecturer', 'teaching assistant',   "member of teaching staff",'student',  'employee'],
     nationality: ['egyptian', 'foreigner'],
