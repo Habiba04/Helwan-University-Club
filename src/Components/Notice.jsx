@@ -10,7 +10,7 @@ const Notice = (props) => {
     const modalOpenRef = useRef(null);
 
     useEffect(() => {
-        if (!props.hasPaid && modalRef.current) {
+        if (!props.hasPaid && modalRef.current && props.role !== 'staff') {
             const modalCurr = modalRef.current;
             const modal = new Modal(modalCurr);
             modalOpenRef.current = modal;

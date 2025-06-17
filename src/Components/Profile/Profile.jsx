@@ -16,7 +16,8 @@ const defaultProfile = {
     salary: '20313',
     job: 'Teaching Assistant',
     hobbies: 'Swimming, Padel',
-    hasPaid: false
+    hasPaid: false,
+    role: 'staff'
 };
 
 export default function PersonalProfile() {
@@ -31,7 +32,7 @@ export default function PersonalProfile() {
 
     return (
         <div className="profile-wrapper" >
-            <Notice name={profile.name} cost="250" hasPaid={profile.hasPaid}/>
+            <Notice name={profile.name} cost="250" hasPaid={profile.hasPaid} role={profile.role}/>
             <div className="profile-card">
                 <div className="profile-header">1919</div>
                 <h2 className="profile-title">ملف شخصي</h2>
