@@ -13,5 +13,6 @@ import StaffList from './Components/Tables/StaffList.jsx';
 import LogsList from './Components/Tables/LogsList.jsx';
 import BillingList from './Components/Tables/BillingList.jsx';
 import ProfileList from './Components/Tables/ProfileList.jsx';
+import Notice from './Components/Notice.jsx';
 
-export { Home, Footer, Navbar, Login, NotFound, Register, Profile, MembersList, StaffList, LogsList, BillingList, ProfileList };
+export { Home, Footer, Navbar, Login, NotFound, Register, Profile, MembersList, StaffList, LogsList, BillingList, ProfileList, Notice };

@@ -92,6 +92,15 @@ const enKeywords = {
     billType: 'Bill Type',
     currency: 'EGP',
     image: 'Image',
+    dear: 'Dear,',
+    welcome: 'Welcome to the CLub!',
+    pay: 'Please pay the following amount',
+    form: 'of the Membership form, then head to',
+    destination: 'Helwan University Club - Indoor Hall, Second Floor- Room 73',
+    messageEnd: 'at your earliest convenience, to complete the registration process.',
+    gratitude: 'We look forward to welcoming you into our community and look forward to your active participation!',
+    regards: 'Best regards,',
+    HUC: 'Helwan University Club',
 }
 
 export default enKeywords

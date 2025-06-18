@@ -11,7 +11,8 @@ import {
     StaffList,
     LogsList,
     BillingList,
-    ProfileList
+    ProfileList,
+
 } from "./componentPath";
 
 function App() {
