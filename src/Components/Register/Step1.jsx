@@ -180,14 +180,14 @@ const Step1 = ({ next, initialData = {} }) => {
                 <div className="col-md-6 mb-3">
                     <label>{t.fields.password.label}</label>
                     <input name="password" type="password" className="form-control"
-                        value={values.password} onChange={handleChange} />
+                        value={values.password} onChange={handleChange} onMouseEnter={e => e.target.type = 'text'}  onMouseLeave={e => e.target.type = 'password'} />
                     {errors.password && <div className="text-danger small">{errors.password}</div>}
                 </div>
                 {/* Confirm Password */}
                 <div className="col-md-6 mb-3">
                     <label>{t.fields.confirmPassword.label}</label>
                     <input name="confirmPassword" type="password" className="form-control"
-                        value={values.confirmPassword} onChange={handleChange} />
+                        value={values.confirmPassword} onChange={handleChange} onMouseEnter={e => e.target.type = 'text'} onMouseLeave={e => e.target.type = 'password'} />
                     {errors.confirmPassword && <div className="text-danger small">{errors.confirmPassword}</div>}
                 </div>
                 {/* Salary */}
