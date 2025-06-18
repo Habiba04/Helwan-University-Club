@@ -54,12 +54,16 @@ const enKeywords = {
         subscriptionType: { label: 'Subscription Type', placeholder: '' },
         membershipType: { label: 'Membership Type', placeholder: '' },
         personalImage: { label: 'Personal Image' },
-        ssnImage: { label: 'SSN Image' },
+        ssnImage: { label: 'ID Image' },
         medicalReport: { label: 'Medical Report' },
         salaryProof: { label: 'Salary Proof' },
         status: { label: 'Status'},
         search: { label: 'Search', placeholder: 'Search by member ID...' },
         staffSearch: { label: 'Staff Search', placeholder: 'Search by Staff Name...' },
+        age: {
+            label: 'Age',
+            placeholder: 'e.g. 20'
+        }
     },
     jobTypes: ['Professor', 'Retired Professor', 'Lecturer', 'Retired Lecturer', 'Assistant Lecturer', 'Retired Assistant Lecturer', 'Teaching Assistant',   "Member of Teaching Staff",'Student',  'Employee'],
     nationality: ['egyptian', 'foreigner'],

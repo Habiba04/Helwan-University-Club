@@ -54,12 +54,16 @@ const arKeywords = {
         subscriptionType: { label: 'نظام الاشتراك', placeholder: '' },
         membershipType: { label: 'نوع العضوية', placeholder: '' },
         personalImage: { label: 'صورة شخصية' },
-        ssnImage: { label: 'صورة إثبات الدخل' },
+        ssnImage: { label: ' صورة اثبات الشخصيه' },
         medicalReport: { label: 'تقرير طبي' },
         salaryProof: { label: 'إثبات الراتب' },
         status: { label: 'الحالة'},
         search: { label: 'بحث', placeholder: 'بحث برقم العضوية...' },
         staffSearch: { label: 'بحث الموظفين', placeholder: 'بحث باسم الموظف...' },
+        age: {
+            label: 'العمر',
+            placeholder: 'العمر'
+        }
     },
     jobTypes: ['استاذ', 'استاذ متفرغ', 'مدرس', 'مدرس متفرغ', 'مساعد مدرس', 'مساعد مدرس متفرغ', 'معيد', 'عضو تدريس', 'طالب', 'موظف'],
     nationality: ['مصري', 'غير مصري'],

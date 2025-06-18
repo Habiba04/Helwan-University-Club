@@ -68,14 +68,14 @@ const Step1 = ({ next, initialData = {} }) => {
             let isRetired = false;
             let isWorkingMember = false;
 
-            if (idx >= 0 && idx <= 7) {
+            if (idx >= 0 && idx < 7) {
                 mem = membership.fields[0];
                 isWorkingMember = true;
-            } else if (idx === 8) {
-                mem = membership.fields[7];
-                isStudent = true;
+            } else if (idx === 8 || idx === 7) {
+                mem = idx === 8 ? membership.fields[7] : membership.fields[0];
+                isStudent = true ; 
                 newValues.salary = '0.0';
-                newValues.membershipType = membership.fields[7];
+                newValues.membershipType = mem;
                 newValues.subscriptionType = subscriptionType.fields[0];
             } else if (idx === 9) {
                 mem = membership.fields[2];
@@ -175,7 +175,7 @@ const Step1 = ({ next, initialData = {} }) => {
 
                 {(dynamic.isForeigner || values.age) && (
                     <div className="col-md-6 mb-3">
-                        <label>{t.fields.age?.label || 'Age'}</label>
+                        <label>{t.fields.age?.label || 'Age'}</label> 
                         <input name="age" className="form-control" value={values.age} onChange={handleChange} readOnly={!dynamic.isForeigner} disabled={!dynamic.isForeigner} />
                     </div>
                 )}
