@@ -8,7 +8,7 @@ const Step1 = ({ next, initialData = {} }) => {
     const t = lang[language];
     const dir = t.direction;
     const { gender, nationality, jobTypes, membership, subscriptionType } = useProfileFieldsRoles();
-
+     
     const [values, setValues] = useState({
         name: "",
         phone: "",
@@ -28,7 +28,7 @@ const Step1 = ({ next, initialData = {} }) => {
         ...initialData,
     });
     const [errors, setErrors] = useState({});
-    const [dynamic, setDynamic] = useState({ gender: "", isStudent: false, isForeigner: false, isRetired: false });
+    const [dynamic, setDynamic] = useState({ gender: "", isStudent: false, isForeigner: false, isRetired: false, isWorkingMember: false });
 
     const validate = () => {
         const errs = {};
@@ -66,24 +66,31 @@ const Step1 = ({ next, initialData = {} }) => {
             let mem = values.membershipType;
             let isStudent = false;
             let isRetired = false;
+            let isWorkingMember = false;
 
             if (idx >= 0 && idx <= 7) {
                 mem = membership.fields[0];
+                isWorkingMember = true;
             } else if (idx === 8) {
                 mem = membership.fields[7];
                 isStudent = true;
                 newValues.salary = '0.0';
+                newValues.membershipType = membership.fields[7];
+                newValues.subscriptionType = subscriptionType.fields[0];
             } else if (idx === 9) {
                 mem = membership.fields[2];
             }
             // retired jobs detection: any value containing retired keyword
-            if (value.toLowerCase().includes(t.fields.job.retiredKeyword || 'متقاعد')) {
+            if (value.toLowerCase().includes(t.fields.job.retiredKeyword || 'متفرغ' || 'Retired')) {
                 isRetired = true;
                 newValues.salary = '';
+                isWorkingMember = true;
+                newValues.membershipType = membership.fields[1];
+                newValues.subscriptionType = subscriptionType.fields[0];
             }
 
             newValues.membershipType = mem;
-            newDynamic = { ...newDynamic, isStudent, isRetired };
+            newDynamic = { ...newDynamic, isStudent, isRetired, isWorkingMember };
         }
 
         // Nationality logic: foreigner age shown and membership
@@ -93,13 +100,16 @@ const Step1 = ({ next, initialData = {} }) => {
             if (isFor) newValues.membershipType = membership.fields[6];
         }
 
-        // Subscription logic: set default subscription based on membership
+        // Subscription logic: set default subscription based on membership 
         if (name === 'membershipType' || name === 'nationality') {
             if (!newDynamic.isForeigner) {
                 const seasonal = subscriptionType.fields[1];
-                if (newValues.membershipType === membership.fields.find(m => m.toLowerCase().includes('موسمي')))
+                if (newValues.membershipType === membership.fields.find(m => m.toLowerCase().includes('موسمي'))) {
                     newValues.subscriptionType = seasonal;
-                else newValues.subscriptionType = subscriptionType.fields[0];
+                }
+                else {
+                    newValues.subscriptionType = subscriptionType.fields[0];
+                }
             }
         }
 
@@ -166,7 +176,7 @@ const Step1 = ({ next, initialData = {} }) => {
                 {(dynamic.isForeigner || values.age) && (
                     <div className="col-md-6 mb-3">
                         <label>{t.fields.age?.label || 'Age'}</label>
-                        <input name="age" className="form-control" value={values.age} onChange={handleChange} readOnly={!dynamic.isForeigner} />
+                        <input name="age" className="form-control" value={values.age} onChange={handleChange} readOnly={!dynamic.isForeigner} disabled={!dynamic.isForeigner} />
                     </div>
                 )}
                 {/* Email */}
@@ -202,18 +212,20 @@ const Step1 = ({ next, initialData = {} }) => {
                 {/* Subscription */}
                 <div className="col-md-6 mb-3">
                     <label>{t.fields.subscriptionType.label}</label>
-                    <select name="subscriptionType" className="form-select" value={values.subscriptionType} onChange={handleChange}>
+                    <select name="subscriptionType" id="subscriptionType" className="form-select" value={values.subscriptionType} onChange={handleChange} disabled={!dynamic.isForeigner || dynamic.isStudent}>
                         <option value="">--</option>
-                        {subscriptionType.fields.map((s, i) => <option key={i} value={s}>{s}</option>)}
+                        {subscriptionType.fields.map((s, i) => <option key={i}  selected={dynamic.isStudent && i===0 || dynamic.isRetired && i===1 || dynamic.isWorkingMember && i===1} value={s}>{s}</option>)}
+                        
                     </select>
                     {errors.subscriptionType && <div className="text-danger small">{errors.subscriptionType}</div>}
                 </div>
                 {/* Membership */}
                 <div className="col-md-6 mb-3">
                     <label>{t.fields.membershipType.label}</label>
-                    <select name="membershipType" className="form-select" value={values.membershipType} onChange={handleChange}>
+                    <select name="membershipType" className="form-select" value={values.membershipType} onChange={handleChange} disabled={dynamic.isStudent ||  dynamic.isForeigner}>
+                    {/* <select name="membershipType" className="form-select" value={values.membershipType} onChange={handleChange} disabled={dynamic.isStudent || dynamic.isRetired || dynamic.isForeigner || dynamic.isWorkingMember}> */}
                         <option value="">--</option>
-                        {membership.fields.map((m, i) => membership.fields[1] !== m ?(<option key={i} value={m}>{m}</option>): null)}
+                        { membership.fields.map((m, i) => (membership.fields[1] !== m) ? (<option key={i} value={m} selected={dynamic.isStudent && i === 7 || dynamic.isRetired && i === 8|| (dynamic.isWorkingMember && i >= 0 && i < 7)}>{m}</option>): null)}
                     </select>
                     {errors.membershipType && <div className="text-danger small">{errors.membershipType}</div>}
                 </div>
