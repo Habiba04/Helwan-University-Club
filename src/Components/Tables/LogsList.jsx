@@ -34,7 +34,7 @@ const LogsList = () => {
     const fetchData = async () => {
         try {
             //to be replaced with instance
-            const res = await axios.get(`http://localhost:3000/Logs`);
+            const res = await axios.get(`http://localhost:7183/Logs`);
             setLogs(res.data);
         } catch (error) {
             console.error("Error fetching data:", error);

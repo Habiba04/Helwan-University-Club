@@ -44,7 +44,7 @@ const StaffList = () => {
         };
     
         try {
-            const res = await axios.post("http://localhost:3000/Staff", newStaff);
+            const res = await axios.post("http://localhost:7183/Staff", newStaff);
             setStaff(prev => [...prev, res.data]);
     
             // Reset form
@@ -71,7 +71,7 @@ const StaffList = () => {
     const fetchData = async () => {
         try {
             //to be replaced with instance
-            const res = await axios.get(`http://localhost:3000/Staff`);
+            const res = await axios.get(`http://localhost:7183/Staff`);
             setStaff(res.data);
         } catch (error) {
             console.error("Error fetching data:", error);

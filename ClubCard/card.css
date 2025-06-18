@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+@page{
+    margin: 0;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* -------------------- */
+html{
+    font-family: 'Cairo', sans-serif;
+}
+
+/* card.css | http://127.0.0.1:5500/card.css?_cacheOverride=1750214539752 */
+
+.photo {
+  /* width: 100%; */
+  /* height: 70px; */
+  /* width: 100px !important;
+  height: 80px !important; */
+  width: 1in !important;
+  height: 1in !important;
+}
+
+.photo img {
+  /* width: 70px; */
+  /* height: 70px; */
+  width: 100%  !important;
+  height: 100% !important;
+}
+
+.id {
+  /* min-width: 71px; */
+  /* min-width: 100px !important; */
+  min-width: 1in !important;
+}
+
+.container {
+  /* height: 324px; */
+  /* width: 205px; */
+  /* background-color: #f2f2f2; */
+  height: 325.3px !important;
+  width: 206px !important;
+  background-color: #DBF3FE !important;
+}
+.containerBack {
+  /* height: 324px; */
+  /* width: 205px; */
+  /* background-color: #f2f2f2; */
+    height: 325.3px !important;
+    width: 206px !important;
+    background-color: #355583 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.header h1 {
+  /* margin: 0; */
+  /* margin-bottom: 10px; */
+  margin-bottom: 0px !important; 
+  font-weight: 700 !important;
+}
+
+.logo {
+  /* padding-top: 6px; */
+  /* padding-left: 10px; */
+    padding-top: 20px !important;
+    padding-left: 10px !important;
+}
+
+/* card.css | http://127.0.0.1:5500/card.css */
+
+.extra {
+  /* margin-top: 15px; */
+  margin-top: 6px !important;
+}
+
+
+.year h4 {
+  margin-bottom: 6px;
+  /* padding-top: 2px; */
+  padding-top: 4px !important;
+  padding-bottom: 10px !important;
+}
+.yearBack h4 {
+  margin-bottom: 6px;
+  /* padding-top: 2px; */
+  padding-top: 4px !important;
+}
+
+
+.name {
+  /* padding-left: 6px; */
+  /* padding-right: 3px; */
+  padding-left: 10px !important;
+  padding-right: 5px !important;
+}
+
+.name .title, .membership .title, .director .title {
+  /* font-weight: bold; */
+  font-weight: bolder !important;
+  margin-left: 0px !important;
+}
+.title{
+    font-family: 'Cairo', sans-serif !important;
+}
+.membership {
+  /* padding-left: 6px; */
+  /* padding-right: 3px; */
+  padding-left: 10px !important;
+  padding-right: 5px !important;
+}
+
+.director .value {
+  /* margin-top: 5px; */
+  margin-top: 4px !important; 
+}
+
+/* Element | http://127.0.0.1:5500/ */
+
+
+
+
+/* -------------------- */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 324px;
+    width: 205px;
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+img{
+    width: 40px;
+}
+
+.logo{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    padding-top: 6px;
+    padding-left: 10px;
+}
+.head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #355583;
+    /* color: #fff; */
+}
+.logoBackImage{
+    width: 100% !important;
+    height: 100% !important;
+}
+.logoBack{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 6px;
+    padding-left: 10px;
+}
+
+.logo img{
+    width: 45px;
+    height: 29px;
+}
+
+.header h1{
+    margin: 0;
+    margin-bottom: 10px;
+    color: #355583;
+}
+
+.photo{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+}
+
+.photo img{
+    border: 1px solid #F49425;
+    border-radius: 8px 8px 0 0;
+    width: 70px;
+    height: 70px;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* height: 100%; */
+    background-color: #355583;
+    color: #fff;
+}
+
+.id{
+    margin: 0;
+    min-width: 71px;
+    width: fit-content;
+    max-width: 190px;
+    overflow: hidden;
+    border-radius: 0 0 8px 8px;
+    background-color: #F49425;
+    text-align: center;
+}
+
+.id h4{
+    margin: 0;
+    margin-bottom: 2px;
+    padding-top: 2px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+    /* padding-top: 10px; */
+    padding-bottom: 2px;
+    margin: 0;
+}
+
+.name{
+    width: fit-content;
+    max-width: 190px;
+    background-color: #F49425;
+    border-radius: 8px 0 0 0;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 13px;
+    padding-left: 6px;
+    padding-right: 3px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    overflow: hidden;
+}
+
+.membership{
+    width: fit-content;
+    max-width: 190px;
+    background-color: #F49425;
+    border-radius: 0 0 0 8px;
+    text-align: center;
+    margin-top: 4px;
+    font-size: 13px;
+    padding-left: 6px;
+    padding-right: 3px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    overflow: hidden;
+}
+
+.name .title, .membership .title, .director .title{
+    font-weight: bold;
+}
+
+.extra{
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    margin-top: 15px;
+}
+
+
+/* .qrcode{
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.qrcode img{
+    width: 100%;
+    height: 100%;
+} */
+
+.extra .director{
+    margin-right: 10px;
+    font-size: 9px;
+}
+
+.director .value{
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.year, .yearBack{
+    margin: 0;
+    width: 71px;
+    border-radius: 8px 8px 0 0;
+    background-color: #F49425;
+    text-align: center;
+}
+
+.year h4{
+    margin: 0;
+    margin-bottom: 2px;
+    padding-top: 2px;
+}

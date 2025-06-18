@@ -35,7 +35,7 @@ const ProfileList = () => {
     const fetchData = async () => {
         try {
             //to be replaced with instance
-            const res = await axios.get(`http://localhost:3000/Profiles`);
+            const res = await axios.get(`http://localhost:7183/Profiles`);
             setProfiles(res.data);
         } catch (error) {
             console.error("Error fetching data:", error);
