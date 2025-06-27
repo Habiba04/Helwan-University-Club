@@ -1,17 +1,26 @@
-import { useContext } from 'react';
+import { useEffect, useContext, useState } from 'react'; 
 import { LanguageContext } from '../../context/LanguageProvider.context';
 import "./Navbar.css"
 import { NavLink, useNavigate } from 'react-router-dom';
 import lang from '../../assets/lang/language';
 import { Collapse } from 'bootstrap/dist/js/bootstrap.min'; 
+import { useAuth } from '../../context/AuthContext';
 const Navbar = () => {
+    const { user, logout } = useAuth();
     // const { isLoggedIn, role } = JSON.parse(localStorage.getItem('toekn'));
-    const { isLoggedIn, role } = { isLoggedIn: true, role: 'admin' };
-    // const { isLoggedIn, role } = { isLoggedIn: true, role: 'staffMembership' };
+    // const { isLoggedIn, role } = { isLoggedIn: false, role: 'admin' }; 
+    const [role, setRole] = useState(user !== null ? user.user.Type.toLowerCase(): null); 
+    const [isLoggedIn, setIsLoggedIn] = useState(sessionStorage.getItem('token') !== null ? true : false); 
+    // const { isLoggedIn, role } = { isLoggedIn: true, role: 'stuffmembership' };
     // const { isLoggedIn, role } = { isLoggedIn: true, role: 'member' };
     const navigate = useNavigate();
     let {language, changeLanguage} = useContext(LanguageContext);
-
+    useEffect(() => {
+        if (sessionStorage.getItem('token')) {
+            setRole(JSON.parse(sessionStorage.getItem('token')).user.Type.toLowerCase());
+            setIsLoggedIn(true);
+        }
+    },[user]);
     // Collapse menu on item click
     const collapseNavbar = () => {
         const menu = document.getElementById('navbarSupportedContent');
@@ -23,8 +32,10 @@ const Navbar = () => {
         }
     };
     
-    const logout = () => {
-        localStorage.removeItem('token');
+    const logoutBtn = () => {
+        logout();
+        setIsLoggedIn(false);
+        setRole(null);
         navigate('/login');
     }
     return (
@@ -48,7 +59,7 @@ const Navbar = () => {
                                 </NavLink>
                             </li>
 
-                            {role === 'admin' && isLoggedIn && (
+                            {(role === 'admin' || role === 'superadmin') && isLoggedIn && (
                                 <>
                                     <li className="nav-item" onClick={collapseNavbar}>
                                     <NavLink className={({ isActive }) => isActive ? "nav-link activeLink" : "nav-link idealLink"}
@@ -64,9 +75,16 @@ const Navbar = () => {
                                         <span/>
                                     </NavLink>
                                     </li>
+                                    <li className="nav-item" onClick={collapseNavbar}>
+                                    <NavLink className={({ isActive }) => isActive ? "nav-link activeLink" : "nav-link idealLink"}
+                                        to="/logs">
+                                            {lang[language].logsLink}
+                                        <span/>
+                                    </NavLink>
+                                    </li>
                                 </>
                             )} 
-                            {role === 'staffMembership' && isLoggedIn && (
+                            {role === 'stuffmembership' && isLoggedIn && (
                                 
                                     <li className="nav-item" onClick={collapseNavbar}>
                                     <NavLink className={({ isActive }) => isActive ? "nav-link activeLink" : "nav-link idealLink"}
@@ -107,7 +125,7 @@ const Navbar = () => {
                             </select>
                             {!isLoggedIn && (
                                 <>
-                                    <button className="btn my-btn-outline-info mx-1" onClick={() => {
+                                    <button className="btn my-btn-outline-info mx-1" testid="loginbtn" onClick={() => {
                                         navigate("/login")
                                         collapseNavbar();
                                     }} >{lang[language].login}</button>
@@ -119,14 +137,14 @@ const Navbar = () => {
                             )}
                             {isLoggedIn &&  role === 'member' && (
                                 <button className="btn my-btn-outline-info mx-1" onClick={() => {
-                                    navigate("/profile/0")
+                                    navigate(`/profile/${user?.user.Id}`)
                                     collapseNavbar();
                                 }}>{lang[language].profileLink}</button>
                             )}
                             {isLoggedIn && (
                                 <button className="btn my-btn-outline-info mx-1" onClick={
                                     () => {
-                                        logout();
+                                        logoutBtn();
                                         collapseNavbar();
                                     }
                                 }>{lang[language].logout}</button>

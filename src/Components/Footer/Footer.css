@@ -21,14 +21,14 @@ a{
 
 @media (min-width: 900px) {
     .footer{
-        height: 55%;
+        height: 25rem;
     }
 }
-@media (max-width: 1000px) and (min-width: 900px) {
+/* @media (max-width: 1000px) and (min-width: 900px) {
     .footer{
         height: 88%;
     }
-}
+} */
 
 @media (max-width: 900px) {
     .footer{

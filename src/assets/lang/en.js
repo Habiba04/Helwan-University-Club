@@ -41,7 +41,7 @@ const enKeywords = {
     fields: {
         name: { label: 'Full Name', placeholder: 'e.g. Ahmed Mohamed Omar Mohamed' },
         phone: { label: 'Phone', placeholder: 'e.g. +201234567890' },
-        ssn: { label: 'SSN', placeholder: 'e.g. 20123456789012' },
+        ssn: { label: 'ID', placeholder: 'e.g. 20123456789012' },
         socialStatus: { label: 'Social Status', placeholder: 'married, single, ...' },
         email: { label: 'Email', placeholder: 'e.g. example@mail.com' },
         password: { label: 'Password', placeholder: '********' },
@@ -53,16 +53,20 @@ const enKeywords = {
         nationality: { label: 'Nationality', placeholder: '' },
         subscriptionType: { label: 'Subscription Type', placeholder: '' },
         membershipType: { label: 'Membership Type', placeholder: '' },
-        personalImage: { label: 'Personal Image' },
+        faceImage: { label: 'Personal Image' },
         ssnImage: { label: 'ID Image' },
         medicalReport: { label: 'Medical Report' },
         salaryProof: { label: 'Salary Proof' },
         status: { label: 'Status'},
         search: { label: 'Search', placeholder: 'Search by member ID...' },
         staffSearch: { label: 'Staff Search', placeholder: 'Search by Staff Name...' },
-        age: {
-            label: 'Age',
-            placeholder: 'e.g. 20'
+        DOB: {
+            label: 'Data of Birth',
+            placeholder: 'e.g. 2025-06-05'
+        },
+        gender: {
+            label: 'Gender',
+            placeholder: ''
         }
     },
     jobTypes: ['Professor', 'Retired Professor', 'Lecturer', 'Retired Lecturer', 'Assistant Lecturer', 'Retired Assistant Lecturer', 'Teaching Assistant',   "Member of Teaching Staff",'Student',  'Employee'],
@@ -74,6 +78,7 @@ const enKeywords = {
     subscriptionTypes: ['year', 'half year', 'month'],
     subscriptionModes: ['manual', 'auto'],
     subscriptionStatus: ['active', 'expired'],
+    logs:['info','info+','info-','error'],
     membersId: 'Member ID',
     actions: 'Actions',
     view: 'View',
@@ -105,6 +110,11 @@ const enKeywords = {
     gratitude: 'We look forward to welcoming you into our community and look forward to your active participation!',
     regards: 'Best regards,',
     HUC: 'Helwan University Club',
+    edit: 'Edit',
+    save: 'Save',
+    cancel: 'Cancel',
+    openEdit: 'Open Edit',
+    logsLink: 'Logs',
 }
 
 export default enKeywords

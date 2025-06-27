@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import 'react-toastify/dist/ReactToastify.css';
 import './Tables.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,32 +10,51 @@ import useProfileFieldsRoles from './../../shared/services/useProfileFields';
 import { LanguageContext } from './../../context/LanguageProvider.context';
 import { useContext } from 'react';
 import lang from './../../assets/lang/language';
+import api from '../../data/Api';
+import { useAuth } from '../../context/AuthContext';
 
 const MembersList = () => {
-    // const navigate = useNavigate();
+    const {user} = useAuth();
+    const navigate = useNavigate();
     const [Members, setMembers] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const MembersPerPage = 10;
 
     const [searchTerm, setSearchTerm] = useState('');
 
-    const { jobTypes } = useProfileFieldsRoles();
+    const { jobTypes, subscriptionStatus } = useProfileFieldsRoles();
 
     const { language } = useContext(LanguageContext);
     const langs = lang[language];
 
 
 
+    const [totalPages, setTotalPages] = useState(0);
+    const [currentMembers, setCurrentMembers]  = useState(0);
+
 
     useEffect(() => {
         fetchData();
-    }, []);
-
+    }, [user,language,searchTerm]);
+ 
     const fetchData = async () => {
+        if(!user) return
         try {
             //to be replaced with instance
-            const res = await axios.get(`http://localhost:7183/Members`);
-            setMembers(res.data);
+            // https://localhost:7016/api/Member/getAllMembers/ar?PageIndex=1&PageSize=5
+            const res = await api.get(`Member/getAllMembers/${language}?PageIndex=${currentPage}&PageSize=${MembersPerPage}`, {
+                headers: { Authorization: `Bearer ${user.token}` },
+                params: {
+                    ...(searchTerm.toString().match(/^\d+$/)
+                        ? { Ssn: searchTerm }
+                        : { Name: searchTerm }),
+                }
+            });
+            console.log(res.data)
+            setMembers(res.data.data);
+            setCurrentPage(res.data.pagination.pageIndex);
+            setCurrentMembers(res.data.pagination.totalRecords);
+            setTotalPages(res.data.pagination.totalPages);
         } catch (error) {
             console.error("Error fetching data:", error);
         }
@@ -44,18 +63,6 @@ const MembersList = () => {
     
 
 
-
-    // Pagination logic
-    const indexOfLastRequest= currentPage * MembersPerPage;
-    const indexOfFirstRequest = indexOfLastRequest - MembersPerPage;
-
-    const filteredMembers = Members.filter(r =>
-        r.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (r.memberId && r.memberId.includes(searchTerm))
-    );
-    
-    const totalPages = Math.ceil(filteredMembers.length / MembersPerPage);
-    const currentMembers = filteredMembers.slice(indexOfFirstRequest, indexOfLastRequest);
     
 
     return (
@@ -93,21 +100,21 @@ const MembersList = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {currentMembers.map(member => (
+                        {Members.length > 0 && Members.map((member,i) => (
                             <tr key={member.id}>
                                 <td>{member.memberId}</td>
                                 <td className="text-break">{member.name}</td>
                                 <td className="text-break">{member.ssn}</td>
                                 <td className="text-break">{jobTypes.fields[member.job - jobTypes.start]}</td>
-                                <td className="text-break" style={{ color: member.status === 'لم يدفع الإستمارة' ? '#AD8700' : member.status === 'لم يدفع الإشتراك' ? 'green' : 'red'}}>{member.status}</td>
+                                <td className="text-break" style={{ color: member.isApplicationPaid === false ? '#AD8700' : member.subscriptionStatus === 1 ? 'red' : 'green'}}>{subscriptionStatus.fields[member.subscriptionStatus - subscriptionStatus.start]}</td>
                                 <td className="text-center" style={{alignContent:"center"}}>
                                     {/* TODO: onClick={() => navigate(`/staff/${request.id}`)} */}
-                                    <button className="btn my-btn-primary" >
+                                    <button className="btn my-btn-primary" onClick={() => navigate(`/profile/${member.id}`)} testid={`view-${i}`}>
                                         <FontAwesomeIcon icon={faEye} />
                                         <span className="me-2 ms-2">
                                         {langs.view}
                                         </span></button>
-                                </td>
+                                </td> 
                             </tr>
                         ))}
                     </tbody>

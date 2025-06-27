@@ -2,15 +2,17 @@ import React, { useContext, useRef, useEffect } from 'react';
 import { LanguageContext } from './../context/LanguageProvider.context';
 import lang from './../assets/lang/language';
 import {Modal} from 'bootstrap';
-
+import { useAuth } from '../context/AuthContext';
 const Notice = (props) => {
     const { language } = useContext(LanguageContext);
     const langs = lang[language];
     const modalRef = useRef(null);
     const modalOpenRef = useRef(null);
+    const { user } = useAuth();
 
     useEffect(() => {
-        if (!props.hasPaid && modalRef.current && props.role !== 'staff') {
+        console.log(user?.user?.Type?.toLowerCase() === 'member');
+        if (!props.hasPaid && modalRef.current && user?.user?.Type?.toLowerCase() === 'member') { 
             const modalCurr = modalRef.current;
             const modal = new Modal(modalCurr);
             modalOpenRef.current = modal;
@@ -36,7 +38,7 @@ const Notice = (props) => {
                 modalCurr.removeEventListener('hidden.bs.modal', handleHidden);
             }
         }
-    }, [props.hasPaid]);
+    }, [props.hasPaid, user]);
 
     return (
         <div dir={langs.direction} className="text-center">

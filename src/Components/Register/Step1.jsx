@@ -25,6 +25,7 @@ const Step1 = ({ next, initialData = {} }) => {
         hobby: "",
         healthStatus: "",
         age: "",
+        DOB:"",
         ...initialData,
     });
     const [errors, setErrors] = useState({});
@@ -55,6 +56,9 @@ const Step1 = ({ next, initialData = {} }) => {
         if (name === "ssn" && value.length === 14 && !newDynamic.isForeigner) {
             const century = value[0] === '2' ? 1900 : 2000;
             const year = century + parseInt(value.slice(1, 3));
+            const month = parseInt(value.slice(3, 5));
+            const day = parseInt(value.slice(5, 7));
+            newValues.DOB = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
             newValues.age = new Date().getFullYear() - year;
             const genderDigit = parseInt(value[12]);
             newDynamic.gender = genderDigit % 2 === 0 ? t.gender[1] : t.gender[0];
@@ -175,8 +179,8 @@ const Step1 = ({ next, initialData = {} }) => {
 
                 {(dynamic.isForeigner || values.age) && (
                     <div className="col-md-6 mb-3">
-                        <label>{t.fields.age?.label || 'Age'}</label> 
-                        <input name="age" className="form-control" value={values.age} onChange={handleChange} readOnly={!dynamic.isForeigner} disabled={!dynamic.isForeigner} />
+                        <label>{t.fields.DOB?.label || 'Age'}</label> 
+                        <input name="DOB" className="form-control" value={values.DOB} onChange={handleChange} readOnly={!dynamic.isForeigner} disabled={!dynamic.isForeigner} />
                     </div>
                 )}
                 {/* Email */}
@@ -240,7 +244,7 @@ const Step1 = ({ next, initialData = {} }) => {
                 </div>
                 {/* Submit */}
                 <div className="col-md-12 mt-3">
-                    <button type="submit" className="btn btn-primary w-100" style={{ backgroundColor: '#224375' }}>
+                    <button type="submit" testid="registerbtnnext" className="btn btn-primary w-100" style={{ backgroundColor: '#224375' }}>
                         {t.next}
                     </button>
                 </div>

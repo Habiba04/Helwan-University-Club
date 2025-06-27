@@ -17,6 +17,7 @@ import {
 
 function App() {
     const base = '/';
+    // console.log = () => { };
     return (
         
                 <div className="vw-100 vh-100 overflow-auto">

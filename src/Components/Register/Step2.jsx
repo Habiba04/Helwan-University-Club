@@ -11,7 +11,7 @@ const Step2 = ({ back, data, onComplete }) => {
     const [files, setFiles] = useState({});
     const [progress, setProgress] = useState(0);
     const [submitting, setSubmitting] = useState(false);
-    const { jobTypes } = useProfileFieldsRoles(data.job);
+    const { jobTypes , membership, subscriptionType, gender, nationality} = useProfileFieldsRoles(data.job);
     
     const handleChange = (e) => {
         setFiles({ ...files, [e.target.name]: e.target.files[0] });
@@ -26,7 +26,87 @@ const Step2 = ({ back, data, onComplete }) => {
             formData.append(key, value);
         });
         Object.entries(data).forEach(([key, value]) => {
-            formData.append(key, value);
+            if (key === "name") {
+                
+                formData.append("fullName", value);
+            }
+            else if (key === "phone") {
+                
+                formData.append("phoneNumber", value);
+            }
+            else if (key === "ssn") {
+            
+                formData.append("NationalID", value);
+            }
+            else if (key === "hobby") {
+                value = value !== "" ? value : "--"
+                formData.append("Hobbies", value??"--");
+            
+            }   
+            else if (key == "healthStatus") {
+
+                value = value !== "" ? value : "--"
+                formData.append("HealthStatus", value??"--");
+            }
+            else if (key == "salary") {
+                let skip = false
+                value = value == "0.0" ? skip = true : value
+
+                if (!skip) {
+                    
+                    formData.append("Salary", value);
+                }
+            }
+            else if (key == "job") {
+                jobTypes.fields.forEach((j, i) => {
+                    if (j === value) {
+                        value = i;
+                    }
+                })
+                formData.append("Job", value);
+            }
+            else if (key == "membershipType") {
+                membership.fields.forEach((j, i) => {
+                    if (j === value) {
+                        value = i + membership.start;
+                    }
+                })
+                formData.append("MembershipType", value);
+            }
+            else if (key == "subscriptionType") {
+                subscriptionType.fields.forEach((j, i) => {
+                    if (j === value) {
+                        value = i ==2 ? 0 : i == 0 ? 2 :1 + subscriptionType.start;
+                    }
+                })
+                formData.append("subscriptionType", value);
+            }
+            else if (key == "DOB") {
+                formData.append("BrithDate", value);
+            }
+            else if (key == "gender") {
+                gender.fields.forEach((j, i) => {
+                    if (j == value) {
+                        value = i + gender.start;
+                    }
+                })
+                if (!value) {
+                    value = 0;
+                }
+                formData.append("Gender", value);
+            }
+            else if (key == "nationality") {
+                nationality.fields.forEach((j, i) => {
+                    if (j == value) {
+                        value = i + nationality.start;
+                    }
+                })
+                formData.append("nationality", value);
+            }
+            else {
+                
+                formData.append(key, value);
+            }
         });
 
         const config = {
@@ -38,7 +118,7 @@ const Step2 = ({ back, data, onComplete }) => {
 
         try {
             console.log(formData)
-            await api.post("/account/register/", formData, config);
+            await api.post(`Account/Register/${language}`, formData, config);
 
             onComplete();
         } catch (error) {
@@ -65,7 +145,7 @@ const Step2 = ({ back, data, onComplete }) => {
 
             <div className="upload-grid">
                 {[
-                    { name: "personalImage", label: lang[language].fields.personalImage.label, hint:"4x6" },
+                    { name: "faceImage", label: lang[language].fields.faceImage.label, hint:"4x6" },
                     { name: "ssnImage", label: lang[language].fields.ssnImage.label },
                     { name: "salaryProof", label: lang[language].fields.salaryProof.label },
                     { name: "medicalReport", label: lang[language].fields.medicalReport.label },
@@ -112,7 +192,7 @@ const Step2 = ({ back, data, onComplete }) => {
                 </div>
 
 
-            <button className="btn btn-primary w-100" style={{ backgroundColor: "#224375" }}  onClick={handleUpload}>
+            <button className="btn btn-primary w-100" style={{ backgroundColor: "#224375" }} testid="registerbtnsubmit" onClick={handleUpload}>
                 {lang[language].register}
             </button>
         </div>

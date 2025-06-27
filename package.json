@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.9.0",
     "bootstrap": "^5.3.6",
+    "cypress": "^14.5.0",
     "formik": "^2.4.6",
     "joi": "^17.13.3",
     "jquery": "^3.7.1",
@@ -33,7 +34,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server --watch db.json --port 7183"
+    "server": "json-server --watch db.json --port 7183",
+    "cy:open": "cypress open"
   },
   "eslintConfig": {
     "extends": [

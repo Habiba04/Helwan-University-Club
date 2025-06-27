@@ -18,7 +18,7 @@ const Register = () => {
     const back = () => setStep(1);
 
     const handleComplete = () => {
-        navigate("/profile/0");
+        navigate("/login");
     };
 
     return (

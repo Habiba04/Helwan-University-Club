@@ -2,7 +2,7 @@ import validate from "./validate.service";
 import api from "../../../data/Api";
 import authorize from "./authuorize.service";
 
-const handleSubmit = async (e, email, password, setErrors,setLoading,langType) => {
+const handleSubmit = async (e, email, password, setErrors,setLoading,langType,setData) => {
     e.preventDefault();
     setLoading(true);
     const errs = validate(email, password,langType);
@@ -12,9 +12,12 @@ const handleSubmit = async (e, email, password, setErrors,setLoading,langType) =
         return;
     }
     try {
-        const response = await api.post('/auth/login', { email, password });
+        const response = await api.post(`Account/LogIn/${langType}`, { email, password });
         console.log('تم تسجيل الدخول بنجاح:', response.data);
-        console.log(authorize(response.data.token));
+        const data = authorize(response.data.data.token,setData);
+       
+        return data;
+
     } catch (error) {
         console.error('فشل تسجيل الدخول:', error);
     }

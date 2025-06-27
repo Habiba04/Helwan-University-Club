@@ -27,7 +27,6 @@ const arKeywords = {
     createAccount: 'إنشاء حساب',
     next: 'التالي',
     back: 'السابق',
-    register: 'تسجيل',
     step: 'الخطوة',
     errors: {
         name: 'الرجاء إدخال أربعة أسماء على الأقل.',
@@ -53,16 +52,20 @@ const arKeywords = {
         nationality: { label: 'الجنسية', placeholder: '' },
         subscriptionType: { label: 'نظام الاشتراك', placeholder: '' },
         membershipType: { label: 'نوع العضوية', placeholder: '' },
-        personalImage: { label: 'صورة شخصية' },
+        faceImage: { label: 'صورة شخصية' },
         ssnImage: { label: ' صورة اثبات الشخصيه' },
         medicalReport: { label: 'تقرير طبي' },
         salaryProof: { label: 'إثبات الراتب' },
         status: { label: 'الحالة'},
         search: { label: 'بحث', placeholder: 'بحث برقم العضوية...' },
         staffSearch: { label: 'بحث الموظفين', placeholder: 'بحث باسم الموظف...' },
-        age: {
-            label: 'العمر',
-            placeholder: 'العمر'
+        DOB: {
+            label: 'تاريخ الميلاد',
+            placeholder: 'تاريخ الميلاد'
+        },
+        gender: {
+            label: 'الجنس',
+            placeholder: ''
         }
     },
     jobTypes: ['استاذ', 'استاذ متفرغ', 'مدرس', 'مدرس متفرغ', 'مساعد مدرس', 'مساعد مدرس متفرغ', 'معيد', 'عضو تدريس', 'طالب', 'موظف'],
@@ -70,10 +73,10 @@ const arKeywords = {
     membershipTypes: ['العضوالعامل', 'العضوالتابع', 'العضوالزائر', 'العضوالمنتسب', 'العضوالفرع', 'العضوالموسمي', 'العضوالموسمي للأجانب', 'العضوالرياضي'],
     socialStatus: ['اغزب / عزباء', 'متزوج / ة', 'مطلق / ة', 'ارمل / ة', 'منفصل / ة', 'خاطب / ة'],
     gender: ['ذكر', 'انثى'],
-    userTypes: ['سوبر أدمن', 'أدمن', 'عضو', 'موظف إشتراكات', "موظف أمن"],
+    userType: ['سوبر أدمن', 'أدمن', 'عضو', 'موظف إشتراكات', "موظف أمن"],
     subscriptionTypes: ['سنوي', 'نصف سنوي', 'شهري'],
     subscriptionModes: ['يدوي', 'نلقائي'],
-    subscriptionStatus: ['فاعل', 'منتهي'],
+    subscriptionStatus: ['فعال', 'منتهي'],
     membersId: 'رقم العضوية',
     actions: 'تحكم',
     view: 'عرض',
@@ -105,6 +108,12 @@ const arKeywords = {
     gratitude: 'يسعدنا انضمامك الينا و نتطلع الي مشاركتك الفعالة!',
     regards: 'مع اطيب التحيات،',
     HUC: 'نادي جامعة حلوان',
+    edit: 'تعديل',
+    save: 'حفظ',
+    cancel: 'الغاء',
+    openEdit: 'فتح التعديل',
+    logsLink: 'السجلات',
+    logs:['معلومة','معلومة+', 'معلومة-','خطأ']
 };
 
 export default arKeywords
