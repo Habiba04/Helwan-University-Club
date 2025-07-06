@@ -11,6 +11,7 @@ import { useAuth } from '../../context/AuthContext';
 import useProfileFieldsRoles  from './../../shared/services/useProfileFields';
 import ProfileList from '../Tables/ProfileList';
 import CardPrint from '../cardPrint/CardPrint';
+import PrintableFormPage from '../formPrint/PrintableFormpage';
 
 const defaultProfile = {
     name: 'Ahmeed Sayed Zaki Kamel',
@@ -38,6 +39,8 @@ const defaultProfile = {
 export default function PersonalProfile() {
     const { id } = useParams();
     const [profile, setProfile] = useState(defaultProfile);
+    const [zoomImage, setZoomImage] = useState('');
+    const [modalOpen, setModalOpen] = useState(false);
     const { language } = useContext(LanguageContext);
     const { user } = useAuth(); 
     const [loader, setLoader] = useState(false);
@@ -103,15 +106,39 @@ export default function PersonalProfile() {
                                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div className="modal-body">
-                                        <CardPrint name={profile.name} memberId={profile.memberId} />
-                                    </div>
+                                        <CardPrint keyin={"profile.memberIdasdad"} name={profile.name} memberId={profile.memberId} imgs={profile.faceImage} memberType={true}/>
+                                    </div> 
                                 </div>
                             </div>
                         </div>
                             {
                                !profile.hasPaid  && 
-                            <button style={{ borderColor: "#2c3e50" }} className="btn my-btn-primary " ><FontAwesomeIcon icon={faPrint} /><span className='mx-2'>{lang[language].printForm}</span></button>
+                            <button style={{ borderColor: "#2c3e50" }} className="btn my-btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#formModal" ><FontAwesomeIcon icon={faPrint} /><span className='mx-2'>{lang[language].printForm}</span></button>
                         }
+                        <div className="modal fade " id="formModal" tabIndex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+                            <div className="modal-dialog">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h5 className="modal-title" id="formModalLabel">{lang[language].printForm}</h5>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div className="modal-body">
+                                            <PrintableFormPage data={{
+    cost: profile.cost || '250',
+    logoUrl: profile.logoUrl || '/ClubCard/Logos/logo.PNG',
+    photoUrl: profile.faceImage || '/ClubCard/Logos/avatar.jpeg',
+    name: profile.name,
+    dob: profile.dob,
+    type: profile.type || 'عضو تابع',
+    address: profile.address || 'القاهرة',
+    profession: lang[language].jobTypes[profile.job] || 'مهندس برمجيات',
+    phone: profile.phone || '01012345678',
+    declarantId: profile.ssn || '12345678901234555',
+}} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 )}
                 <h2 className="profile-title" >{lang[language].profileLink}</h2>
@@ -123,6 +150,10 @@ export default function PersonalProfile() {
                                 src={profile.faceImage === "" ? "/Logos/avatar.jpeg" : profile.faceImage}
                                 alt="avatar"
                                 style={{ width: "100%", maxWidth: "120px", borderRadius: "50%", objectFit: "cover" }}
+                                onClick={() => {
+                                    setZoomImage(profile.faceImage);
+                                    setModalOpen(true);
+                                }}
                             />
 
                         </div>
@@ -139,7 +170,10 @@ export default function PersonalProfile() {
 
                                 return imageSrc ? (
                                     <div key={label} className="upload-item d-flex flex-column" dir={lang[language].direction}>
-                                        <img src={imageSrc} alt='upload' width="100px" />
+                                        <img src={imageSrc} alt='upload' width="100px" onClick={() => {
+                                            setZoomImage(imageSrc);
+                                            setModalOpen(true);
+                                        }} />
                                         <span>{label}</span>
                                     </div>
                                 ) : null;
@@ -179,36 +213,36 @@ export default function PersonalProfile() {
                                         <input value={jobTypes.fields[profile.job - jobTypes.start]} readOnly disabled={true} />
                                     }
                                     {(key == lang[language].fields.DOB.label) &&
-                                        <input value={profile["dob"]} readOnly disabled={true}/>
+                                        <input value={profile["dob"]} readOnly disabled={true} />
                                     }
                                     {(key == lang[language].fields.phone.label) &&
-                                        <input value={profile["phone"]} readOnly disabled={true}/>
+                                        <input value={profile["phone"]} readOnly disabled={true} />
                                     }
-                                    {(key == lang[language].fields.hobby.label) && 
-                                        <input value={profile["hobbies"]} readOnly disabled={true}/>
+                                    {(key == lang[language].fields.hobby.label) &&
+                                        <input value={profile["hobbies"]} readOnly disabled={true} />
                                     }
-                                    {(key == lang[language].fields.salary.label) && 
-                                        <input value={profile["salary"]} readOnly disabled={true}/> 
+                                    {(key == lang[language].fields.salary.label) &&
+                                        <input value={profile["salary"]} readOnly disabled={true} />
                                     }
                                 </div>
-                            ); 
+                            );
                         })}
 
                         {/* TODO: fix and connect action button */}
                         {/* <div className="btn-row">
-                            <button className="btn edit"><FontAwesomeIcon icon={faEdit} /> { lang[language].edit} </button>
-                            <button className="btn open"><FontAwesomeIcon icon={faPen} /> {lang[language].openEdit} </button>
-                            <button className="btn cancel"><FontAwesomeIcon icon={faTimes} /> {lang[language].cancel } </button>
-                            <button className="btn save"><FontAwesomeIcon icon={faCheck} /> { lang[language].save} </button>
-                        </div> */}
+                        <button className="btn edit"><FontAwesomeIcon icon={faEdit} /> { lang[language].edit} </button>
+                        <button className="btn open"><FontAwesomeIcon icon={faPen} /> {lang[language].openEdit} </button>
+                        <button className="btn cancel"><FontAwesomeIcon icon={faTimes} /> {lang[language].cancel } </button>
+                        <button className="btn save"><FontAwesomeIcon icon={faCheck} /> { lang[language].save} </button>
+                    </div> */}
                     </div>
                 </div>
             </div>
             <div className="profile-card w-100 mt-5 px-3">
                 <div className='text-center w-100 p-3'>
-                    <h2 className={lang[language].direction === 'rtl' ? 'text-end': 'text-start'}>{lang[language].memberDependent}</h2>
-                    <div className='bg-primary w-100 h-25'> 
-                        <ProfileList ProfileData={profile} memberId={profile.memberId}/>
+                    <h2 className={lang[language].direction === 'rtl' ? 'text-end' : 'text-start'}>{lang[language].memberDependent}</h2>
+                    <div className='bg-primary w-100 h-25'>
+                        <ProfileList ProfileData={profile} memberId={profile.memberId} />
                     </div>
                 </div>
             </div>

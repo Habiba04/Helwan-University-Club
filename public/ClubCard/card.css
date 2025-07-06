@@ -120,6 +120,7 @@ html{
 
 .director .value {
   /* margin-top: 5px; */
+  font-size: 10px !important;
   margin-top: 4px !important; 
 }
 
@@ -308,6 +309,7 @@ img{
 }
 
 .director .value{
+    font-size: 1px;
     margin-top: 5px;
     margin-bottom: 0;
 }

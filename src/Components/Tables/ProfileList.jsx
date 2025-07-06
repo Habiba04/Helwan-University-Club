@@ -10,6 +10,7 @@ import { LanguageContext } from './../../context/LanguageProvider.context';
 import lang from './../../assets/lang/language';
 import api from '../../data/Api';
 import { useAuth } from '../../context/AuthContext';
+import CardPrint from '../cardPrint/CardPrint';
 
 const ProfileList = ({ memberId = 0 }) => {
     const { user } = useAuth();
@@ -20,6 +21,7 @@ const ProfileList = ({ memberId = 0 }) => {
     const [totalPages, setTotalPages] = useState(0);
     const [currentMembers, setCurrentMembers] = useState(0);
     const [searchTerm, setSearchTerm] = useState('');
+    const [printProfile, setPrintProfile] = useState('');
     const { language } = useContext(LanguageContext);
     const langs = lang[language];
 
@@ -201,7 +203,26 @@ const ProfileList = ({ memberId = 0 }) => {
                                     {/* <td style={{ color: Profile.status === 'تم التجديد' ? 'green' : 'red' }}>{Profile.status}</td> */}
                                     {(role === "superadmin" || role === "admin" || role === "stuffmembership")&&(<td>
                                         {/* <input type="checkbox" className="form-check-input" /> */}
-                                        <button style={{borderColor:"#2c3e50" }} className="btn my-btn-primary" onClick={() => handleEdit(Profile.id)}><FontAwesomeIcon icon={faPrint} /></button>
+                                        <button style={{ borderColor: "#2c3e50" }} className="btn my-btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#cardModalD" onClick={() => {
+                                            setPrintProfile({
+                                                name: Profile.name,
+                                                memberId: memberId,
+                                                imgs: Profile.image
+                                            })
+                                        }}><FontAwesomeIcon icon={faPrint} /></button>
+                                        <div className="modal fade" id="cardModalD" tabIndex="-1" aria-labelledby="cardModalLabel" aria-hidden="true">
+                                            <div className="modal-dialog">
+                                                <div className="modal-content" >
+                                                    <div className="modal-header">
+                                                        <h5 className="modal-title" id="cardModalLabel">{lang[language].printCard}</h5>
+                                                        {/* <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> */}
+                                                    </div>
+                                                    <div className="modal-body">
+                                                        <CardPrint keyin={i} name={printProfile.name} memberId={memberId} imgs={printProfile.imgs} memberType={false} />
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                        </div> 
                                     </td>)}
                                 </tr>
                             ))

@@ -174,8 +174,8 @@ img{
 }
 .logoBack{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     width: 100%;
     height: 100%;
     padding-top: 6px;
