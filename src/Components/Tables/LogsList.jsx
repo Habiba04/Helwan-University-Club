@@ -54,6 +54,7 @@ const LogsList = () => {
         "message": "[محاولة تسجيل دخول] البريد الإلكتروني: SuperAdmin@gmail.com\r\n[نجاح] تم تسجيل الدخول بنجاح.\r\n"
       },
             */
+            setEndDate(startDate);
             const res = await api.get(`Logs/${language}`, {
                 headers: { Authorization: `Bearer ${user?.token}` },
                 params: {
@@ -135,7 +136,8 @@ const LogsList = () => {
             </div>
                 <div className="col-md-3 mb-2 d-flex flex-row justify-content-center align-items-center">
                 <label className="form-label mx-3">{langs.endDate}</label>
-                <input
+                <input 
+                disabled={true}     
                 type="date"
                 className="form-control"
                 value={endDate}
@@ -155,7 +157,7 @@ const LogsList = () => {
                             <th className='w-auto'>{langs.userID}</th>
                             <th className='w-auto text-break'>{langs.userName}</th>
                             <th className="w-auto text-break">{langs.date}</th>
-                            <th className="w-auto text-break "><span className='mx-5'>{langs.type}</span></th>
+                            <th className="w-auto  "><span className='mx-5'>{langs.type}</span></th>
                             <th className="w-auto text-break">{langs.message}</th>
                         </tr>
                     </thead>
@@ -166,7 +168,7 @@ const LogsList = () => {
                                 <td className="text-break">{log.userName}</td>
                                 <td className="text-break">{log.timeStamp}</td>
                                 {/* <td className="text-break">{jobTypes.fields[log.job - jobTypes.start]}</td> */}
-                                <td className="text-break"><span className="mx-5">{langs.logs[log.type - 1]}</span></td>
+                                <td className=""><span className="mx-5">{langs.logs[log.type - 1]}</span></td>
                                 <td className="text-break">{log.message}</td>
                             </tr>
                         ))}

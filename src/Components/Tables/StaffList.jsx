@@ -85,12 +85,12 @@ const StaffList = () => {
 
     useEffect(() => {
         fetchData();
-    }, [currentPage]);
+    }, [currentPage,searchTerm]);
 
     const fetchData = async () => {
         try {
             //to be replaced with instance
-            const res = await api.get(`Staff/${language}?PageIndex=${currentPage}&PageSize=${totalPage}`);
+            const res = await api.get(`Staff/${language}?PageIndex=${currentPage}&PageSize=${totalPage}`); 
             console.log(res.data.data)
             setStaff(res.data.data.staff);
 
@@ -203,7 +203,7 @@ const StaffList = () => {
                     </div>
                 </div>
                 <div className="col-md-3 mb-2">
-                    <input
+                    {/* <input
                         type="text"
                         className="form-control"
                         placeholder={langs.fields.staffSearch.placeholder}
@@ -212,7 +212,7 @@ const StaffList = () => {
                             setSearchTerm(e.target.value);
                             setCurrentPage(1);
                         }}
-                    />
+                    /> */}
                 </div>
             </div>
 

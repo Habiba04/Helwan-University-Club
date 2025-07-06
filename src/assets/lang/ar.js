@@ -57,7 +57,7 @@ const arKeywords = {
         medicalReport: { label: 'تقرير طبي' },
         salaryProof: { label: 'إثبات الراتب' },
         status: { label: 'الحالة'},
-        search: { label: 'بحث', placeholder: 'بحث برقم العضوية...' },
+        search: { label: 'بحث', placeholder: 'بحث برقم القومي...' },
         staffSearch: { label: 'بحث الموظفين', placeholder: 'بحث باسم الموظف...' },
         DOB: {
             label: 'تاريخ الميلاد',
@@ -113,7 +113,11 @@ const arKeywords = {
     cancel: 'الغاء',
     openEdit: 'فتح التعديل',
     logsLink: 'السجلات',
-    logs:['معلومة','معلومة+', 'معلومة-','خطأ']
+    logs: ['معلومة', 'معلومة+', 'معلومة-', 'خطأ'],
+    memberDependent: ' الاعضاء تابعين',
+    noData: 'لا يوجد بيانات',
+    printCard: 'طباعة البطاقة',
+    printForm: 'طباعة استمارة العضوية',
 };
 
 export default arKeywords

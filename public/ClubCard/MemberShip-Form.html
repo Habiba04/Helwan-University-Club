@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Form</title>
+    <link rel="stylesheet" href="MemberShip-Form.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="overlay"></div>
+        <!-- Header Section -->
+
+            <div class="header-first-part">
+                <button type="button" onclick="printForm()">
+                    <img src="Logos/Button.svg" alt="">                 
+                </button>
+            </div>
+
+            <div class="header-sec-part">
+
+                <div class="value-input-group">
+                <img src="Logos/Text field.svg" alt="" class="cost">
+                <label>قيمة الإستمارة</label>
+                </div>
+                <img src="Logos/logoBack.svg" alt="HUC Logo">
+            </div>
+ 
+        <!-- Form Title -->
+        <div class="text-center" style="margin-bottom: 40px;">
+            <h2 class="section-title">إستمارة عضوية</h2>
+        </div>
+
+        <!-- Main Form Section -->
+        <div class="form-section-main">
+            <div class="image-placeholder">صورة</div>
+            <div class="form-inputs-right">
+                <div class="form-group">
+                    <input type="text" id="name" name="name">
+                    <label for="name">:الإسم</label>
+
+                </div>
+                <div class="form-group">
+                    <input type="text" id="dob" name="dob">
+                    <label for="dob"> :تاريخ الميلاد</label>
+
+                </div>
+                <div class="form-group">
+                    <input type="text" id="type" name="type">
+                    <label for="type">:النوع</label>
+
+                </div>
+                <div class="form-group">
+                    <input type="text" id="address" name="address">
+                    <label for="address">:العنوان</label>
+
+                </div>
+                <div class="form-group radio-group">
+                    <label><input type="radio" name="marital_status" value="أعزب"> أعزب</label>
+                    <label><input type="radio" name="marital_status" value="متزوج/متزوجة"> متزوج / متزوجة</label>
+                    <label><input type="radio" name="marital_status" value="أرمل/أرملة"> أرمل / أرملة</label>
+                    <label><input type="radio" name="marital_status" value="مطلق/مطلقة"> مطلق / مطلقة</label>
+                    <label>:الحالة الإجتماعية</label>
+
+                </div>
+                <div class="form-group">
+                    <input type="text" id="profession" name="profession">
+                    <label for="profession">:المهنة</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="phone" name="phone">
+                    <label for="phone">:الهاتف واتس اب</label>
+
+                </div>
+                <div class="form-group">
+                    <input type="text" id="children_dob" name="children_dob">
+                    <label for="children_dob">:الأبناء وتاريخ الميلاد</label>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Declaration Section -->
+        <div class="declaration-section">
+            <h4>إقرار</h4>
+            <div class="declaration-text">
+                أقر أنا <input type="text" class="inline-input"> برقم قومي <input type="text" class="inline-input"> بأن البيانات الواردة في هذه الاستمارة صحيحة علي مسؤوليتي الشخصية مع الالتزام بالقانون الرياضي المصري ولائحة النظام الأساسي لأندية الشركات والمصانع و الوزارات والمصالح الحكومية ووحدات الإدارة المحلية والهيئات العامة وأجهزة الدولة و سلطاتها واللائحة الملاحقة وتعديلاتها 
+                <div class="declaration-date-right">تحريراً في / / ٢٠م</div>
+
+            </div>
+
+     
+            <div class="signature-area">
+                <div class="signature-item">
+                    <label for="report_what">:المقرر بما فيه </label>
+                    <input type="text" id="report_what" name="report_what">
+                </div>
+                <div class="signature-item">
+                    <label for="signature_name">:الإسم</label>
+                    <input type="text" id="signature_name" name="signature_name">
+                </div>
+                <div class="signature-item">
+                    <label for="signature">:التوقيع</label>
+                    <input type="text" id="signature" name="signature">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        function printForm() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

@@ -115,6 +115,10 @@ const enKeywords = {
     cancel: 'Cancel',
     openEdit: 'Open Edit',
     logsLink: 'Logs',
+    memberDependent: 'Dependents Members',
+    noData: 'No Data',
+    printCard: 'Print Card',
+    printForm: 'Print Form',
 }
 
 export default enKeywords

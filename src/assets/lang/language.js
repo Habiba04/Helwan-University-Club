@@ -1,6 +1,6 @@
-import arKeywords from "./ar"
-import enKeywords from "./en"
 
+import arKeywords from "./ar"
+import enKeywords from "./en" 
 const lang = {
     ar: {
         direction: 'rtl',

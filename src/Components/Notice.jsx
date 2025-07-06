@@ -18,10 +18,11 @@ const Notice = (props) => {
             modalOpenRef.current = modal;
             modal.show();
 
-            // Auto-close after 2 minutes
+            // Auto-close after 2 minutes 
             const timeoutId = setTimeout(() => {
                 modal.hide();
-            }, 120000);
+            }, 5000);
+            // }, 120000);
 
             const handleHidden = () => {
                 document.body.classList.remove('modal-open');

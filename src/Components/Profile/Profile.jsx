@@ -2,13 +2,15 @@ import React, { useEffect, useState , useContext} from 'react';
 import { useParams } from 'react-router-dom';
 import './Profile.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faImage, faPen, faCheck, faTimes, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faImage, faPen, faCheck, faTimes, faEdit , faPrint} from '@fortawesome/free-solid-svg-icons';
 import Notice from './../Notice'
 import { LanguageContext } from '../../context/LanguageProvider.context';
 import lang from './../../assets/lang/language';
 import { api } from './../../data/Api';
 import { useAuth } from '../../context/AuthContext';
 import useProfileFieldsRoles  from './../../shared/services/useProfileFields';
+import ProfileList from '../Tables/ProfileList';
+import CardPrint from '../cardPrint/CardPrint';
 
 const defaultProfile = {
     name: 'Ahmeed Sayed Zaki Kamel',
@@ -47,7 +49,8 @@ export default function PersonalProfile() {
             const response = await api.get(`Member/memberViewProfile/${id}/${language}`,
                 { headers: { Authorization: `Bearer ${token}` } }
             );
-            setProfile({...response.data.data});
+            setProfile({ ...response.data.data });
+            console.log(response.data.data);
             
         } catch (error) {
             console.log(error);
@@ -77,12 +80,41 @@ export default function PersonalProfile() {
         );
     }
 
+
+    const role = user?.user.Type.toLowerCase();
     return (
-        <div className="profile-wrapper" >
+        <div className="profile-wrapper container" >
             <Notice name={profile.name} cost="250" hasPaid={profile.hasPaid} />
+            
             <div className="profile-card">
-                <div className="profile-header">{profile.memberId }</div>
-                <h2 className="profile-title">{lang[language].profileLink}</h2>
+                <div className="profile-header">{profile.memberId}
+                </div>
+            
+                {
+                    (role === "admin" || role === "stuffmembership") &&
+                    (
+                    <div className='d-flex justify-content-end my-5'>
+                        <button style={{ borderColor: "#2c3e50" }} className="btn my-btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#cardModal" ><FontAwesomeIcon icon={faPrint} /><span className='mx-2'>{lang[language].printCard}</span></button>
+                        <div className="modal fade" id="cardModal" tabIndex="-1" aria-labelledby="cardModalLabel" aria-hidden="true">
+                            <div className="modal-dialog">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h5 className="modal-title" id="cardModalLabel">{lang[language].printCard}</h5>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div className="modal-body">
+                                        <CardPrint name={profile.name} memberId={profile.memberId} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            {
+                               !profile.hasPaid  && 
+                            <button style={{ borderColor: "#2c3e50" }} className="btn my-btn-primary " ><FontAwesomeIcon icon={faPrint} /><span className='mx-2'>{lang[language].printForm}</span></button>
+                        }
+                    </div>
+                )}
+                <h2 className="profile-title" >{lang[language].profileLink}</h2>
 
                 <div className="profile-main" dir="ltr"> 
                     <div className="left-col">
@@ -169,6 +201,14 @@ export default function PersonalProfile() {
                             <button className="btn cancel"><FontAwesomeIcon icon={faTimes} /> {lang[language].cancel } </button>
                             <button className="btn save"><FontAwesomeIcon icon={faCheck} /> { lang[language].save} </button>
                         </div> */}
+                    </div>
+                </div>
+            </div>
+            <div className="profile-card w-100 mt-5 px-3">
+                <div className='text-center w-100 p-3'>
+                    <h2 className={lang[language].direction === 'rtl' ? 'text-end': 'text-start'}>{lang[language].memberDependent}</h2>
+                    <div className='bg-primary w-100 h-25'> 
+                        <ProfileList ProfileData={profile} memberId={profile.memberId}/>
                     </div>
                 </div>
             </div>

@@ -107,9 +107,9 @@ const MembersList = () => {
                                 <td className="text-break">{member.ssn}</td>
                                 <td className="text-break">{jobTypes.fields[member.job - jobTypes.start]}</td>
                                 <td className="text-break" style={{ color: member.isApplicationPaid === false ? '#AD8700' : member.subscriptionStatus === 1 ? 'red' : 'green'}}>{subscriptionStatus.fields[member.subscriptionStatus - subscriptionStatus.start]}</td>
-                                <td className="text-center" style={{alignContent:"center"}}>
+                                <td className="text-center" style={{ alignContent: "center", }}>
                                     {/* TODO: onClick={() => navigate(`/staff/${request.id}`)} */}
-                                    <button className="btn my-btn-primary" onClick={() => navigate(`/profile/${member.id}`)} testid={`view-${i}`}>
+                                    <button className="btn my-btn-primary" style={{ borderColor: "#2c3e50" }} onClick={() => navigate(`/profile/${member.id}`)} testid={`view-${i}`}>
                                         <FontAwesomeIcon icon={faEye} />
                                         <span className="me-2 ms-2">
                                         {langs.view}

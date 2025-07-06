@@ -34,7 +34,7 @@
     color: #0a2b4c;
     margin-top: 2.5rem;
     margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
@@ -174,10 +174,12 @@
     .profile-header {
         font-size: 1rem;
         padding: 0.25rem 0.75rem;
+        
     }
 
     .profile-title {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
+        
     }
 
     .form-row {
