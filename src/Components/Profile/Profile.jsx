@@ -210,7 +210,7 @@ export default function PersonalProfile() {
                                         <input value={gender.fields[profile.gender - gender.start]} readOnly disabled={true} />
                                     }
                                     {(key === lang[language].fields.job.label) &&
-                                        <input value={jobTypes.fields[profile.job - jobTypes.start]} readOnly disabled={true} />
+                                        <input value={jobTypes.fields[profile.job ]} readOnly disabled={true} />
                                     }
                                     {(key == lang[language].fields.DOB.label) &&
                                         <input value={profile["dob"]} readOnly disabled={true} />

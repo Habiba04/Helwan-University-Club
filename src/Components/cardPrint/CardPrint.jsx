@@ -28,7 +28,7 @@ const CardPrint = ({ name, memberId, imgs, memberType , keyin}) => {
                 <li>options {'>'} printer {'('}Destination{')'} {'>'} MagicCard Rio Pro 360</li>
                 <li>additional options {'>'} margine {'>'} none</li>
                 <li>options {'>'} orintaion {'>'} portrait</li>
-                <li>options {'>'} card type {'>'} cr80</li>
+                <li>options {'>'} paper size {'>'} cr80</li>
             </ol>
             <button onClick={handlePrint} className='btn btn-success'>Print</button>
             <div style={{ display: 'none' }}>
