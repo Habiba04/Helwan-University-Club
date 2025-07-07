@@ -61,7 +61,11 @@ const Step1 = ({ next, initialData = {} }) => {
             newValues.DOB = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
             newValues.age = new Date().getFullYear() - year;
             const genderDigit = parseInt(value[12]);
-            newDynamic.gender = genderDigit % 2 === 0 ? t.gender[1] : t.gender[0];
+            // newDynamic.gender = genderDigit % 2 === 0 ? t.gender[0] : t.gender[1];
+            newDynamic.gender = lang[language].gender[genderDigit % 2 == 1 ? 0 : 1]; ;
+            dynamic.gender = newDynamic.gender;
+            console.log(dynamic.gender);
+            values.gender = newDynamic.gender;
         }
 
         // Job logic: membership auto assign & retired/salary logic

@@ -23,7 +23,13 @@ const Step2 = ({ back, data, onComplete }) => {
         setSubmitting(true);
         const formData = new FormData();
         Object.entries(files).forEach(([key, value]) => {
-            formData.append(key, value);
+            // console.log(key,key == "salaryProof ");
+            // if (key.includes("salaryProof "))
+            // {
+            //     formData.append("SalaryProve", value);
+            // }
+            // else
+                formData.append(key, value);
         });
         Object.entries(data).forEach(([key, value]) => {
             if (key === "name") {
@@ -54,7 +60,7 @@ const Step2 = ({ back, data, onComplete }) => {
 
                 if (!skip) {
                     
-                    formData.append("Salary", value);
+                    formData.append("Salary", parseFloat(value));
                 }
             }
             else if (key == "job") {
@@ -63,7 +69,7 @@ const Step2 = ({ back, data, onComplete }) => {
                         value = i;
                     }
                 })
-                formData.append("Job", value);
+                formData.append("Job", value+1);
             }
             else if (key == "membershipType") {
                 membership.fields.forEach((j, i) => {
@@ -86,6 +92,7 @@ const Step2 = ({ back, data, onComplete }) => {
             }
             else if (key == "gender") {
                 gender.fields.forEach((j, i) => {
+                    console.log(j, value);
                     if (j == value) {
                         value = i + gender.start;
                     }
@@ -93,7 +100,7 @@ const Step2 = ({ back, data, onComplete }) => {
                 if (!value) {
                     value = 0;
                 }
-                formData.append("Gender", value);
+                formData.append("Gender", parseInt(value));
             }
             else if (key == "nationality") {
                 nationality.fields.forEach((j, i) => {
@@ -130,7 +137,7 @@ const Step2 = ({ back, data, onComplete }) => {
         jobTypes.fields.forEach((j, i) => {
             if (j === data.job && !jobTypes.noSalary?.includes(i)) isJobPasswithSalary = true;
         })
-        return field.name === "salaryProof" && (data.salary === "0.0"  || !isJobPasswithSalary)
+        return field.name === "SalaryProve" && (data.salary === "0.0"  || !isJobPasswithSalary)
     }
     const isHealthProveRequired = (field)=>{
         return (data.healthStatus === "" ) && field.name === "medicalReport"
@@ -147,7 +154,7 @@ const Step2 = ({ back, data, onComplete }) => {
                 {[
                     { name: "faceImage", label: lang[language].fields.faceImage.label, hint:"4x6" },
                     { name: "ssnImage", label: lang[language].fields.ssnImage.label },
-                    { name: "salaryProof", label: lang[language].fields.salaryProof.label },
+                    { name: "SalaryProve", label: lang[language].fields.salaryProof.label },
                     { name: "medicalReport", label: lang[language].fields.medicalReport.label },
                 ].map((field, i) => 
                 {
