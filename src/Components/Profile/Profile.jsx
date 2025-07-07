@@ -129,7 +129,7 @@ export default function PersonalProfile() {
     photoUrl: profile.faceImage || '/ClubCard/Logos/avatar.jpeg',
     name: profile.name,
     dob: profile.dob,
-    type: profile.type || 'عضو تابع',
+    type: profile.type || 'عضو عامل', 
     address: profile.address || 'القاهرة',
     profession: lang[language].jobTypes[profile.job] || 'مهندس برمجيات',
     phone: profile.phone || '01012345678',
