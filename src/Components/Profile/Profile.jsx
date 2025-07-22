@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useEffect, useState , useContext} from 'react';
 import { useParams } from 'react-router-dom';
 import './Profile.css';
@@ -88,11 +89,17 @@ export default function PersonalProfile() {
     return (
         <div className="profile-wrapper container" >
             <Notice name={profile.name} cost="250" hasPaid={profile.hasPaid} />
-            
+            <div className="modal fade modal-lg" id="cardModalzoom" tabIndex="-1" aria-labelledby="cardModalLabel" aria-hidden="false">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <img src={zoomImage} alt='zoom image' />
+                    </div>
+                </div>
+            </div>
             <div className="profile-card">
                 <div className="profile-header">{profile.memberId}
                 </div>
-            
+
                 {
                     (role === "admin" || role === "stuffmembership") &&
                     (
@@ -149,11 +156,13 @@ export default function PersonalProfile() {
                             <img
                                 src={profile.faceImage === "" ? "/Logos/avatar.jpeg" : profile.faceImage}
                                 alt="avatar"
-                                style={{ width: "100%", maxWidth: "120px", borderRadius: "50%", objectFit: "cover" }}
+                                style={{ width: "100%", maxWidth: "120px", height: "auto", borderRadius: "50%", objectFit: "cover" }}
                                 onClick={() => {
                                     setZoomImage(profile.faceImage);
                                     setModalOpen(true);
                                 }}
+
+                                data-bs-toggle="modal" data-bs-target="#cardModalzoom"
                             />
 
                         </div>
@@ -170,10 +179,13 @@ export default function PersonalProfile() {
 
                                 return imageSrc ? (
                                     <div key={label} className="upload-item d-flex flex-column" dir={lang[language].direction}>
-                                        <img src={imageSrc} alt='upload' width="100px" onClick={() => {
+                                        <img src={imageSrc} alt='upload' width="200px" onClick={() => {
                                             setZoomImage(imageSrc);
                                             setModalOpen(true);
-                                        }} />
+                                        }}
+
+                                            data-bs-toggle="modal" data-bs-target="#cardModalzoom"
+                                        />
                                         <span>{label}</span>
                                     </div>
                                 ) : null;
